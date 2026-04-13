@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Lal Sweets – Futuredesks</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{display:['Syne','sans-serif'],body:['Outfit','sans-serif']}}}}</script>
+<style>
+:root{--c-bg:#FFF8F0;--c-surface:#FFF0E0;--c-border:#F0D8C0;--c-text:#1A0A00;--c-muted:#8B5A2B;--c-accent:#FA6A00;--c-card:#FFFFFF;--c-hero1:#8B1A1A;--c-hero2:#FA8C16;--c-nav:rgba(255,248,240,0.92)}
+html.dark{--c-bg:#12080A;--c-surface:#1C0E08;--c-border:#3D1F0A;--c-text:#FFF0E0;--c-muted:#C49060;--c-accent:#FA8C16;--c-card:#1C1008;--c-nav:rgba(18,8,10,0.92)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:var(--c-bg);color:var(--c-text);transition:background .35s,color .35s;overflow-x:hidden}
+nav{background:var(--c-nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);position:fixed;top:0;left:0;right:0;z-index:50;padding:1rem 2rem;transition:background .35s}
+.btn-primary{background:var(--c-accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;border-radius:999px;padding:.7rem 1.6rem;display:inline-block;transition:transform .2s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(250,106,0,.4)}
+.btn-outline{border:2px solid var(--c-border);color:var(--c-text);font-family:'Syne',sans-serif;font-weight:600;border-radius:999px;padding:.65rem 1.6rem;display:inline-block;transition:border-color .2s}
+.btn-outline:hover{border-color:var(--c-accent)}
+#theme-toggle{width:52px;height:28px;border-radius:999px;border:2px solid var(--c-border);background:var(--c-surface);cursor:pointer;position:relative;transition:background .3s}
+#theme-toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--c-text);transition:transform .3s}
+html.dark #theme-toggle::after{transform:translateX(24px)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.stat-card{background:var(--c-card);border:1px solid var(--c-border);border-radius:20px;padding:2rem;text-align:center}
+.feature-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.screen-mockup{background:var(--c-card);border:1px solid var(--c-border);border-radius:20px;padding:1.5rem;transition:transform .3s}
+.screen-mockup:hover{transform:scale(1.02)}
+</style>
+</head>
+<body>
+
+<nav class="flex items-center justify-between max-w-7xl mx-auto">
+  <a href="futuredesks.html" class="font-display font-800 text-xl flex items-center gap-2" style="color:var(--c-text)">
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#C8F544"/><path d="M7 8h14M7 14h9M7 20h12" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round"/></svg>
+    FUTUREDESKS
+  </a>
+  <div class="flex items-center gap-4">
+    <button id="theme-toggle" aria-label="Toggle theme"></button>
+    <a href="projects-index.html" class="btn-outline text-sm">← All Work</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-28 pb-0 px-6 relative overflow-hidden" style="background:linear-gradient(160deg,#8B1A1A 0%,#D4380D 45%,#FA8C16 100%);min-height:80vh;display:flex;flex-direction:column;justify-content:flex-end">
+  <div class="absolute inset-0 opacity-10" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221%22/><circle cx=%2250%22 cy=%2250%22 r=%2230%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221%22/></svg>') repeat"></div>
+  <div class="max-w-7xl mx-auto w-full pb-16 relative z-10">
+    <div class="flex flex-wrap items-end justify-between gap-8">
+      <div>
+        <div class="text-white/60 text-sm font-semibold tracking-widest uppercase mb-3 reveal">E-Commerce · 2024</div>
+        <h1 class="font-display font-800 text-6xl md:text-8xl text-white leading-[1] reveal" style="transition-delay:.1s">LAL<br/>SWEETS</h1>
+        <p class="text-white/70 text-lg mt-4 max-w-md reveal" style="transition-delay:.2s">Where traditional Indian sweets meet contemporary digital commerce — smooth, delightful, fast.</p>
+      </div>
+      <div class="flex gap-8 reveal" style="transition-delay:.3s">
+        <div class="text-center">
+          <div class="font-display font-800 text-4xl text-white">3x</div>
+          <div class="text-white/60 text-sm mt-1">Conversion uplift</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display font-800 text-4xl text-white">14d</div>
+          <div class="text-white/60 text-sm mt-1">Delivery time</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display font-800 text-4xl text-white">100%</div>
+          <div class="text-white/60 text-sm mt-1">Mobile ready</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Wave -->
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:-2px" preserveAspectRatio="none">
+    <path d="M0 80 Q360 0 720 40 Q1080 80 1440 20 L1440 80 Z" fill="var(--c-bg)"/>
+  </svg>
+</section>
+
+<!-- OVERVIEW -->
+<section class="py-20 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <div class="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-6" style="background:rgba(250,106,0,.12);color:var(--c-accent)">The Challenge</div>
+      <h2 class="font-display font-800 text-4xl mb-6" style="color:var(--c-text)">A 60-year old brand needed a modern digital home</h2>
+      <p class="leading-relaxed mb-4" style="color:var(--c-muted)">Lal Sweets had decades of trust but zero online presence. Walk-in customers were loyal, but a new generation of buyers needed a digital-first experience that honoured the brand's warmth.</p>
+      <p class="leading-relaxed" style="color:var(--c-muted)">We built a high-performance e-commerce site with rich product photography support, festive collection pages, and a checkout optimized for impulse gifting.</p>
+    </div>
+    <!-- Mock product card -->
+    <div class="reveal" style="transition-delay:.15s">
+      <div class="screen-mockup">
+        <div class="rounded-xl overflow-hidden mb-4" style="background:linear-gradient(135deg,#8B1A1A,#FA8C16);height:200px;display:flex;align-items:center;justify-content:center">
+          <div class="text-center text-white">
+            <div class="text-5xl mb-2">🍬</div>
+            <div class="font-display font-700 text-xl">Premium Mithai Box</div>
+            <div class="text-white/70 text-sm">500g · ₹599</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="flex-1 rounded-xl p-3" style="background:var(--c-surface)">
+            <div class="text-xs font-semibold mb-1" style="color:var(--c-muted)">Kaju Katli</div>
+            <div class="text-sm font-700" style="color:var(--c-text)">₹380</div>
+          </div>
+          <div class="flex-1 rounded-xl p-3" style="background:var(--c-surface)">
+            <div class="text-xs font-semibold mb-1" style="color:var(--c-muted)">Gulab Jamun</div>
+            <div class="text-sm font-700" style="color:var(--c-text)">₹240</div>
+          </div>
+          <div class="flex-1 rounded-xl p-3" style="background:var(--c-surface)">
+            <div class="text-xs font-semibold mb-1" style="color:var(--c-muted)">Rasgulla</div>
+            <div class="text-sm font-700" style="color:var(--c-text)">₹199</div>
+          </div>
+        </div>
+        <div class="mt-4 rounded-xl py-3 text-center font-display font-700" style="background:var(--c-accent);color:#fff">Add to Cart 🛒</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-20 px-6" style="background:var(--c-surface)">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="font-display font-800 text-3xl mb-12 text-center reveal" style="color:var(--c-text)">What We Built</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal" style="background:var(--c-card);border:1px solid var(--c-border);border-radius:20px;padding:1.5rem">
+        <div class="feature-icon" style="background:rgba(250,106,0,.12)">🛍️</div>
+        <h3 class="font-display font-700 text-lg mb-2" style="color:var(--c-text)">Product Catalogue</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Filterable by category, occasion, and dietary preference with rich image support.</p>
+      </div>
+      <div class="reveal" style="background:var(--c-card);border:1px solid var(--c-border);border-radius:20px;padding:1.5rem;transition-delay:.1s">
+        <div class="feature-icon" style="background:rgba(250,106,0,.12)">🎁</div>
+        <h3 class="font-display font-700 text-lg mb-2" style="color:var(--c-text)">Gifting Flow</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Custom gift box builder with message cards, festive wrapping options and bulk orders.</p>
+      </div>
+      <div class="reveal" style="background:var(--c-card);border:1px solid var(--c-border);border-radius:20px;padding:1.5rem;transition-delay:.2s">
+        <div class="feature-icon" style="background:rgba(250,106,0,.12)">📱</div>
+        <h3 class="font-display font-700 text-lg mb-2" style="color:var(--c-text)">Mobile-first</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Optimized for WhatsApp share, UPI payments, and one-thumb checkout on mobile.</p>
+      </div>
+      <div class="reveal" style="background:var(--c-card);border:1px solid var(--c-border);border-radius:20px;padding:1.5rem;transition-delay:.3s">
+        <div class="feature-icon" style="background:rgba(250,106,0,.12)">⚡</div>
+        <h3 class="font-display font-700 text-lg mb-2" style="color:var(--c-text)">Performance</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">95+ Lighthouse score, lazy-loaded images, edge-cached product pages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="py-20 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="font-display font-800 text-3xl mb-12 reveal" style="color:var(--c-text)">Tech Stack</h2>
+    <div class="flex flex-wrap justify-center gap-4 reveal" style="transition-delay:.1s">
+      <span class="px-5 py-2.5 rounded-full font-semibold text-sm" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">React.js</span>
+      <span class="px-5 py-2.5 rounded-full font-semibold text-sm" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">Shopify</span>
+      <span class="px-5 py-2.5 rounded-full font-semibold text-sm" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">Razorpay</span>
+      <span class="px-5 py-2.5 rounded-full font-semibold text-sm" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">Cloudinary</span>
+      <span class="px-5 py-2.5 rounded-full font-semibold text-sm" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">Tailwind CSS</span>
+      <span class="px-5 py-2.5 rounded-full font-semibold text-sm" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">Vercel</span>
+    </div>
+  </div>
+</section>
+
+<!-- NAV BETWEEN PROJECTS -->
+<section class="py-12 px-6 border-t" style="border-color:var(--c-border)">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between gap-4 items-center">
+    <a href="projects-index.html" class="btn-outline text-sm">← All Projects</a>
+    <a href="kirtilals.html" class="btn-primary text-sm">Next: Kirtilals →</a>
+  </div>
+</section>
+
+<script>
+const html=document.documentElement;
+html.className=localStorage.getItem('fd-theme')||'light';
+document.getElementById('theme-toggle').addEventListener('click',()=>{html.className=html.classList.contains('dark')?'light':'dark';localStorage.setItem('fd-theme',html.className)});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

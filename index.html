@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="/assets/public/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airbebin – Build Your Startup</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/assets/public/style.css">
+  <script src="tailwind.config.js"></script>
+  <script async src="//www.instagram.com/embed.js"></script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full p-4">
+    <div
+      class="max-w-4xl mx-auto flex items-center justify-between gap-4 py-3 md:py-4 px-6 token-card border token-border rounded-full ">
+
+      <!-- Logo -->
+      <a href="/" class="font-display font-800 text-2xl tracking-tight token-text flex items-center gap-2">
+        <img src="/assets/public/logo.png" alt="" class="w-10 logo-invert">
+        AIRBEBIN
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium token-muted">
+        <a href="/features" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Prebuilt</a>
+        <a href="/projects" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Customized</a>
+        <a href="/about-us" class="hover:token-text transition-colors hover:text-[var(--c-text)]">About Us</a>
+        <a href="/contact" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Contact Us</a>
+      </div>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="https://wa.me/916205163577" class="hidden md:inline-block btn-primary text-sm">Let's Talk</a>
+
+        <!-- Mobile hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg token-surface border token-border token-text">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <rect y="3" width="20" height="2" rx="1" />
+            <rect y="9" width="20" height="2" rx="1" />
+            <rect y="15" width="20" height="2" rx="1" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu"
+      class="md:hidden overflow-hidden max-h-0 opacity-0 -translate-y-4 transition-all duration-300 ease-in-out">
+
+      <div class="mt-2 flex flex-col gap-4 py-4 token-card border token-border rounded-2xl p-5">
+        <a href="/features" onclick="closeMobile()">Prebuilt</a>
+        <a href="/projects" onclick="closeMobile()">Customized</a>
+        <a href="/about-us" onclick="closeMobile()">About Us</a>
+        <a href="/contact" onclick="closeMobile()">Contact Us</a>
+        <a href="https://wa.me/916205163577" onclick="closeMobile()" class="btn-primary text-center">Let's Talk</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section
+    class="grid-bg min-h-screen flex flex-col items-center justify-center pt-32 pb-2 text-center relative overflow-hidden">
+    <!-- Glow orbs -->
+    <div
+      class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
+      style="background: radial-gradient(circle, #C8F544 0%, transparent 70%);"></div>
+
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+
+      <!-- Phone -->
+      <img src="/assets/public/logo.png" alt="App Preview"
+        class="relative w-32 md:w-44 drop-shadow-2xl animate-float mx-auto logo-invert" />
+
+      <script>
+        document.addEventListener("mousemove", (e) => {
+          const img = document.querySelector(".animate-float");
+          const x = (window.innerWidth / 2 - e.clientX) / 50;
+          const y = (window.innerHeight / 2 - e.clientY) / 50;
+
+          img.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      </script>
+
+      <h1 class="font-display font-800 text-5xl md:text-7xl leading-[1.05] tracking-tight token-text mb-6 reveal"
+        style="transition-delay:.1s">
+        Build your Startup<br />
+        <span class="relative inline-block">
+          with Airbebin
+          <svg class="absolute -bottom-2 left-0 w-full" height="6" viewBox="0 0 300 6" preserveAspectRatio="none">
+            <path d="M0 5 Q75 0 150 5 Q225 10 300 5" stroke="#C8F544" stroke-width="3" fill="none" />
+          </svg>
+        </span>
+      </h1>
+
+      <p class="text-lg token-muted max-w-xl mx-auto mb-10 reveal" style="transition-delay:.2s">
+        From SaaS prebuilts to fully custom apps — we turn ideas into digital products fast, beautifully, and
+        affordably.
+      </p>
+
+      <!-- Avatar trust row -->
+      <div class="flex items-center justify-center gap-3 mb-8 reveal">
+        <div class="avatar-stack flex">
+          <img src="https://i.pravatar.cc/40?img=11" alt="user">
+          <img src="https://i.pravatar.cc/40?img=22" alt="user">
+          <img src="https://i.pravatar.cc/40?img=33" alt="user">
+        </div>
+        <span class="text-sm token-muted">Trusted by <strong class="token-accent-text font-semibold">1.3L+</strong>
+          Audience</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 reveal" style="transition-delay:.3s">
+        <a href="/features" class="btn-primary text-base">Let's Explore</a>
+        <a href="/contact" class="btn-outline text-base">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- LOGO MARQUEE -->
+    <div class="overflow-hidden mt-12 z-10 relative w-full">
+
+      <!-- LEFT MOVING -->
+      <div class="relative overflow-hidden mb-8">
+
+        <div id="marquee-left" class="flex gap-8 md:gap-16 w-max items-center 
+                animate-[marqueeLeft_25s_linear_infinite]">
+
+          <!-- Logos -->
+          <img src="/assets/images/logos/ms.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT MOVING -->
+      <div class="relative overflow-hidden">
+
+        <div id="marquee-right" class="flex gap-8 md:gap-16 w-max items-center 
+                animate-[marqueeRight_25s_linear_infinite]">
+
+          <!-- Logos -->
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+          <img src="/assets/public/logo.png" class="h-12 md:h-20 opacity-20 hover:opacity-40 logo-invert" />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="pill">Features</span>
+        <h2 class="font-display font-700 text-4xl md:text-5xl token-text">Streamline Business with our<br />Flexible
+          Options</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
+
+        <!-- 1. Custom Software -->
+        <div class="card p-8 reveal">
+          <div class="w-full aspect-video rounded-xl mb-6 token-surface flex items-center justify-center">
+            <div class="text-center p-6">
+              <div
+                class="w-14 h-14 rounded-2xl token-accent flex items-center justify-center mx-auto mb-4 font-800 text-xl">
+                CS</div>
+              <p class="font-700 token-text">Custom Software</p>
+              <p class="text-sm token-muted mt-1">Web • App • SaaS</p>
+            </div>
+          </div>
+          <h3 class="font-700 text-2xl token-text mb-2">Custom Development</h3>
+          <p class="token-muted text-sm leading-relaxed">Tailor-made solutions built for your business — scalable,
+            secure, and optimized for performance.</p>
+          <a href="#contact" class="btn-primary inline-block mt-6 text-sm">Start Project →</a>
+        </div>
+
+        <!-- 2. SaaS Prebuilt -->
+        <div class="card p-8 reveal">
+          <div class="w-full aspect-video rounded-xl mb-6 token-surface flex items-center justify-center">
+            <div class="text-center p-6">
+              <div
+                class="w-14 h-14 rounded-2xl bg-green-600 flex items-center justify-center mx-auto mb-4 text-white font-800">
+                SP</div>
+              <p class="font-700 token-text">SaaS Solutions</p>
+              <p class="text-sm token-muted mt-1">Ready to Launch</p>
+            </div>
+          </div>
+          <h3 class="font-700 text-2xl token-text mb-2">Prebuilt Products</h3>
+          <p class="token-muted text-sm leading-relaxed">Launch faster with prebuilt SaaS platforms — fully customizable
+            and ready to scale instantly.</p>
+          <a href="#contact" class="btn-primary inline-block mt-6 text-sm">Explore →</a>
+        </div>
+
+        <!-- 3. Ads -->
+        <div class="card p-8 reveal">
+          <div class="w-full aspect-video rounded-xl mb-6 token-surface flex items-center justify-center">
+            <div class="text-center p-6">
+              <div
+                class="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center mx-auto mb-4 text-white font-800">
+                AD</div>
+              <p class="font-700 token-text">Google & Meta Ads</p>
+              <p class="text-sm token-muted mt-1">Performance Marketing</p>
+            </div>
+          </div>
+          <h3 class="font-700 text-2xl token-text mb-2">Paid Advertising</h3>
+          <p class="token-muted text-sm leading-relaxed">Drive traffic, leads, and sales with high-converting ad
+            campaigns on Google and Meta platforms.</p>
+          <a href="#contact" class="btn-primary inline-block mt-6 text-sm">Run Ads →</a>
+        </div>
+
+        <!-- 4. Social Media -->
+        <div class="card p-8 reveal">
+          <div class="w-full aspect-video rounded-xl mb-6 token-surface flex items-center justify-center">
+            <div class="text-center p-6">
+              <div
+                class="w-14 h-14 rounded-2xl bg-pink-600 flex items-center justify-center mx-auto mb-4 text-white font-800">
+                SM</div>
+              <p class="font-700 token-text">Social Media</p>
+              <p class="text-sm token-muted mt-1">Growth & Branding</p>
+            </div>
+          </div>
+          <h3 class="font-700 text-2xl token-text mb-2">Management</h3>
+          <p class="token-muted text-sm leading-relaxed">Build your brand presence with strategic content, engagement,
+            and consistent growth across platforms.</p>
+          <a href="#contact" class="btn-primary inline-block mt-6 text-sm">Grow Now →</a>
+        </div>
+
+        <!-- 5. Automation -->
+        <div class="card p-8 reveal">
+          <div class="w-full aspect-video rounded-xl mb-6 token-surface flex items-center justify-center">
+            <div class="text-center p-6">
+              <div
+                class="w-14 h-14 rounded-2xl bg-yellow-500 flex items-center justify-center mx-auto mb-4 text-white font-800">
+                AU</div>
+              <p class="font-700 token-text">Automation</p>
+              <p class="text-sm token-muted mt-1">Smart Workflows</p>
+            </div>
+          </div>
+          <h3 class="font-700 text-2xl token-text mb-2">Business Automation</h3>
+          <p class="token-muted text-sm leading-relaxed">Automate repetitive tasks and workflows to save time, reduce
+            errors, and boost efficiency.</p>
+          <a href="#contact" class="btn-primary inline-block mt-6 text-sm">Automate →</a>
+        </div>
+
+        <!-- 6. Design -->
+        <div class="card p-8 reveal">
+          <div class="w-full aspect-video rounded-xl mb-6 token-surface flex items-center justify-center">
+            <div class="text-center p-6">
+              <div
+                class="w-14 h-14 rounded-2xl bg-purple-600 flex items-center justify-center mx-auto mb-4 text-white font-800">
+                UX</div>
+              <p class="font-700 token-text">UI/UX & Graphics</p>
+              <p class="text-sm token-muted mt-1">Creative Design</p>
+            </div>
+          </div>
+          <h3 class="font-700 text-2xl token-text mb-2">Design Services</h3>
+          <p class="token-muted text-sm leading-relaxed">Craft stunning user experiences and visuals that elevate your
+            brand and improve usability.</p>
+          <a href="#contact" class="btn-primary inline-block mt-6 text-sm">Design Now →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="py-24 px-6 token-surface">
+    <div class="max-w-6xl mx-auto text-center overflow-hidden">
+
+      <span class="pill reveal">Social Presence</span>
+      <h2 class="font-display font-700 text-4xl md:text-5xl token-text mb-4 reveal" style="transition-delay:.1s">Trusted
+        by 1k+ People</h2>
+      <p class="token-muted mb-16 reveal" style="transition-delay:.2s">We share the journey of building startups —
+        follow along and learn with us.</p>
+
+      <!-- Carousel -->
+      <div class="relative flex items-center justify-center">
+
+        <!-- Left -->
+        <button id="prev" class="absolute left-0 z-10 bg-white shadow rounded-full w-10 h-10">
+          ←
+        </button>
+
+        <!-- Cards -->
+        <div id="carousel" class="flex gap-6 items-center transition-all duration-500">
+
+          <!-- Cards -->
+          <blockquote class="instagram-media card opacity-50 scale-90 transition-all duration-500 ease-in-out"
+            data-instgrm-permalink="https://www.instagram.com/p/DWmc7ZCk19d/" data-instgrm-version="1">
+          </blockquote>
+
+          <blockquote class="instagram-media card opacity-50 scale-90 transition-all duration-500 ease-in-out"
+            data-instgrm-permalink="https://www.instagram.com/p/DWmc7ZCk19d/" data-instgrm-version="1">
+          </blockquote>
+
+          <blockquote class="instagram-media card opacity-50 scale-90 transition-all duration-500 ease-in-out"
+            data-instgrm-permalink="https://www.instagram.com/p/DWmc7ZCk19d/" data-instgrm-version="1">
+          </blockquote>
+
+
+          <!-- <div class="card w-64 opacity-50 scale-90 transition-all">
+            <img src="assets/images/socialview/_03.png" class="rounded-2xl h-80 object-cover" />
+          </div> -->
+
+        </div>
+
+        <!-- Right -->
+        <button id="next" class="absolute right-0 z-10 bg-white shadow rounded-full w-10 h-10">
+          →
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div id="dots" class="flex justify-center mt-8 gap-2"></div>
+
+    </div>
+  </section>
+  <script>
+    const carousel = document.getElementById("carousel");
+    const cards = Array.from(carousel.children);
+    const dotsContainer = document.getElementById("dots");
+    let current = 1; // center card index
+
+    // Create dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "w-2 h-2 rounded-full bg-gray-300 transition-all";
+      dot.addEventListener("click", () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer.children);
+
+    function updateUI() {
+      cards.forEach((card, i) => {
+        card.classList.remove("scale-100", "w-72", "opacity-100");
+        card.classList.add("scale-90", "w-64", "opacity-50");
+
+        if (i === current) {
+          card.classList.remove("scale-90", "w-64", "opacity-50");
+          card.classList.add("scale-100", "w-72", "opacity-100");
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.remove("bg-gray-800", "w-6");
+        dot.classList.add("bg-gray-300", "w-2");
+
+        if (i === current) {
+          dot.classList.add("bg-gray-800", "w-6");
+        }
+      });
+    }
+
+    function goToSlide(index) {
+      current = index;
+      updateUI();
+    }
+
+    document.getElementById("next").onclick = () => {
+      current = (current + 1) % cards.length;
+      updateUI();
+    };
+
+    document.getElementById("prev").onclick = () => {
+      current = (current - 1 + cards.length) % cards.length;
+      updateUI();
+    };
+
+    updateUI();
+  </script>
+
+  <!-- OUR WORKS -->
+  <section id="work" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="pill">Our Work</span>
+        <h2 class="font-display font-700 text-4xl md:text-5xl token-text">Turning Visions Into Digital Reality</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+        <!-- Project card -->
+        <a href="https://www.trudocsglobal.com" target="_blank" class="card overflow-hidden reveal group">
+
+          <!-- Banner -->
+          <div class="aspect-video relative overflow-hidden">
+
+            <!-- Image -->
+            <div class="absolute inset-0 
+                bg-[url('/assets/images/projects/trudocsglobal.png')] 
+                bg-cover bg-center 
+                group-hover:scale-110 transition duration-700">
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <!-- Title -->
+            <div class="relative flex items-center justify-center h-full">
+              <span class="font-display font-800 text-xl text-white">
+                TRUDOCS GLOBAL
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Content -->
+          <div class="p-5">
+            <h4 class="font-display font-700 token-text">
+              Trudocs Global Platform
+            </h4>
+            <p class="text-sm token-muted mt-1">
+              A platform for easy document services and verification.
+              It is simple, secure, and user-friendly.
+            </p>
+          </div>
+
+        </a>
+
+        <a href="https://www.thestorycreators.photography" target="_blank" class="card overflow-hidden reveal group">
+
+          <!-- Banner -->
+          <div class="aspect-video relative overflow-hidden">
+
+            <!-- Image -->
+            <div class="absolute inset-0 
+                bg-[url('/assets/images/projects/thestorycreators.png')] 
+                bg-cover bg-center 
+                group-hover:scale-110 transition duration-700">
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <!-- Title -->
+            <div class="relative flex items-center justify-center h-full">
+              <span class="font-display font-800 text-xl text-white">
+                THE STORY CREATORS
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Content -->
+          <div class="p-5">
+            <h4 class="font-display font-700 token-text">
+              The Story Creators Website
+            </h4>
+            <p class="text-sm token-muted mt-1">
+              A photography business website to showcase work and services.
+              Clean design with a focus on visuals and storytelling.
+            </p>
+          </div>
+
+        </a>
+
+        <a href="https://www.appliancesakhi.in" target="_blank" class="card overflow-hidden reveal group">
+
+          <!-- Banner -->
+          <div class="aspect-video relative overflow-hidden">
+
+            <!-- Image -->
+            <div class="absolute inset-0 
+                bg-[url('/assets/images/projects/appliancesakhi.png')] 
+                bg-cover bg-center 
+                group-hover:scale-110 transition duration-700">
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <!-- Title -->
+            <div class="relative flex items-center justify-center h-full">
+              <span class="font-display font-800 text-xl text-white">
+                APPLIANCE SAKHI
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Content -->
+          <div class="p-5">
+            <h4 class="font-display font-700 token-text">
+              Appliance Sakhi Business Website
+            </h4>
+            <p class="text-sm token-muted mt-1">
+              A website for home appliance services and support.
+              Easy booking, clear services, and user-friendly design.
+            </p>
+          </div>
+
+        </a>
+
+        <div class="card overflow-hidden reveal group">
+
+          <!-- Banner -->
+          <div class="aspect-video relative overflow-hidden">
+
+            <!-- Image -->
+            <div class="absolute inset-0 
+                bg-[url('/assets/images/projects/moderixsolutions.png')] 
+                bg-cover bg-center 
+                group-hover:scale-110 transition duration-700">
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <!-- Title -->
+            <div class="relative flex items-center justify-center h-full">
+              <span class="font-display font-800 text-xl text-white">
+                MODERIX SOLUTIONS
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Content -->
+          <div class="p-5">
+            <h4 class="font-display font-700 token-text">
+              Moderix Solutions Website
+            </h4>
+            <p class="text-sm token-muted mt-1">
+              A digital marketing website for online growth and branding.
+              Focused on SEO, ads, and social media services.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="card overflow-hidden reveal group">
+
+          <!-- Banner -->
+          <div class="aspect-video relative overflow-hidden">
+
+            <!-- Image -->
+            <div class="absolute inset-0 
+                bg-[url('/assets/images/projects/vsmtechnologies.png')] 
+                bg-cover bg-center 
+                group-hover:scale-110 transition duration-700">
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <!-- Title -->
+            <div class="relative flex items-center justify-center h-full">
+              <span class="font-display font-800 text-xl text-white">
+                VSM TECHNOLOGIES
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Content -->
+          <div class="p-5">
+            <h4 class="font-display font-700 token-text">
+              VSMTechnologies Solutions
+            </h4>
+            <p class="text-sm token-muted mt-1">
+              A business website offering tech and communication services.
+              Includes solutions like SMS, voice, and IT services.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <a href="/projects" class="btn-outline">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker py-4 overflow-hidden text-sm font-display font-700 tracking-widest uppercase">
+
+    <div id="marquee-left" class="ticker-inner flex gap-8 md:gap-16 w-max items-center 
+                animate-[marqueeLeft_25s_linear_infinite]">
+      <!-- Logos -->
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+    </div>
+
+  </div>
+  <script>
+    const style = document.createElement("style");
+    style.innerHTML = `
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}`;
+    document.head.appendChild(style);
+
+    /* Duplicate content for seamless loop */
+    const left = document.getElementById("marquee-left");
+    const right = document.getElementById("marquee-right");
+
+    left.innerHTML += left.innerHTML;
+    right.innerHTML += right.innerHTML;
+  </script>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 token-surface">
+    <div class="max-w-7xl mx-auto text-center">
+      <span class="pill reveal">Client Testimonials</span>
+      <h2 class="font-display font-700 text-4xl md:text-5xl token-text mb-16 reveal" style="transition-delay:.1s">Happy
+        Clients Testimonials</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="card p-6 text-left reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://i.pravatar.cc/48?img=60" class="w-12 h-12 rounded-full avatar-ring" alt="Muktesh Narula">
+            <div>
+              <p class="font-semibold token-text text-sm">Muktesh Narula</p>
+              <p class="text-xs token-muted">DOVESOFT</p>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-3">★★★★★</div>
+          <p class="text-sm token-muted leading-relaxed">"Exceptional team. They delivered exactly what we envisioned —
+            on time and with great attention to detail."</p>
+        </div>
+
+        <div class="card p-6 text-left reveal" style="transition-delay:.1s">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://i.pravatar.cc/48?img=45" class="w-12 h-12 rounded-full avatar-ring" alt="Shriya Sadneni">
+            <div>
+              <p class="font-semibold token-text text-sm">Shriya Sadneni</p>
+              <p class="text-xs token-muted">MURZBAN</p>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-3">★★★★★</div>
+          <p class="text-sm token-muted leading-relaxed">"The luxury website they built for Murzban is beautiful and
+            converts really well. Highly recommend Airbebin."</p>
+        </div>
+
+        <div class="card p-6 text-left reveal" style="transition-delay:.2s">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://i.pravatar.cc/48?img=30" class="w-12 h-12 rounded-full avatar-ring" alt="Yash Goswami">
+            <div>
+              <p class="font-semibold token-text text-sm">Yash Goswami</p>
+              <p class="text-xs token-muted">BITEBEE FOUNDER</p>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-3">★★★★★</div>
+          <p class="text-sm token-muted leading-relaxed">"They understood our startup's unique needs and built a product
+            that users love. Great experience overall."</p>
+        </div>
+
+        <div class="card p-6 text-left reveal" style="transition-delay:.3s">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://i.pravatar.cc/48?img=14" class="w-12 h-12 rounded-full avatar-ring" alt="Ajay Agarwal">
+            <div>
+              <p class="font-semibold token-text text-sm">Ajay Agarwal</p>
+              <p class="text-xs token-muted">AVEENA CO-FOUNDER</p>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-3">★★★★★</div>
+          <p class="text-sm token-muted leading-relaxed">"Professional, fast, and quality output. The team at Airbebin
+            truly delivers on their promises."</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="pill">Our Team</span>
+        <h2 class="font-display font-700 text-4xl md:text-5xl token-text">Team Behind Wonders</h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12">
+
+        <!-- Team member generator -->
+        <div class="card p-5 text-center reveal">
+          <img src="/assets/images/team/founder.jpg" class="w-20 h-20 rounded-2xl mx-auto mb-3 object-cover"
+            alt="Shivam Singh">
+          <p class="font-semibold token-text text-sm">Shivam Singh</p>
+          <p class="text-xs token-muted mt-0.5">Founder</p>
+        </div>
+        <div class="card p-5 text-center reveal" style="transition-delay:.05s">
+          <img src="https://i.pravatar.cc/80?img=41" class="w-20 h-20 rounded-2xl mx-auto mb-3 object-cover"
+            alt="Aastha Negi">
+          <p class="font-semibold token-text text-sm">Aastha Negi</p>
+          <p class="text-xs token-muted mt-0.5">Co-founder</p>
+        </div>
+        <div class="card p-5 text-center reveal" style="transition-delay:.1s">
+          <img src="https://i.pravatar.cc/80?img=52" class="w-20 h-20 rounded-2xl mx-auto mb-3 object-cover"
+            alt="Aditya Agarwal">
+          <p class="font-semibold token-text text-sm">Aditya Agarwal</p>
+          <p class="text-xs token-muted mt-0.5">Chief Operations Head</p>
+        </div>
+        <div class="card p-5 text-center reveal" style="transition-delay:.15s">
+          <img src="https://i.pravatar.cc/80?img=56" class="w-20 h-20 rounded-2xl mx-auto mb-3 object-cover"
+            alt="Utkarsh Rajoriya">
+          <p class="font-semibold token-text text-sm">Utkarsh Rajoriya</p>
+          <p class="text-xs token-muted mt-0.5">Full Stack Developer</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-6 token-surface">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="pill">FAQ</span>
+        <h2 class="font-display font-700 text-4xl md:text-5xl token-text">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="flex flex-col gap-4">
+
+        <details class="faq-item card reveal">
+          <summary class="p-6 flex items-center justify-between gap-4">
+            <span class="font-semibold token-text">How long does it take to deliver a pre-built application or
+              website?</span>
+            <svg class="faq-chevron w-5 h-5 token-muted flex-shrink-0 transition-transform" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 token-muted text-sm leading-relaxed">Typically, a prebuilt application takes 7–14 working
+            days to customize and deploy to your domain after receiving all required assets and credentials from you.
+          </p>
+        </details>
+
+        <details class="faq-item card reveal" style="transition-delay:.05s">
+          <summary class="p-6 flex items-center justify-between gap-4">
+            <span class="font-semibold token-text">Do you provide the complete source code after development?</span>
+            <svg class="faq-chevron w-5 h-5 token-muted flex-shrink-0 transition-transform" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 token-muted text-sm leading-relaxed">Yes! For custom development projects, complete source
+            code is handed over after final payment. Prebuilt solutions are provided as white-label deployments.</p>
+        </details>
+
+        <details class="faq-item card reveal" style="transition-delay:.1s">
+          <summary class="p-6 flex items-center justify-between gap-4">
+            <span class="font-semibold token-text">What's the difference between a pre-built and a custom development
+              project?</span>
+            <svg class="faq-chevron w-5 h-5 token-muted flex-shrink-0 transition-transform" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 token-muted text-sm leading-relaxed">Prebuilt solutions are ready-made, whitelabeled
+            products (like our grocery app) deployed for your brand quickly and affordably. Custom development is built
+            from scratch to match your specific unique requirements.</p>
+        </details>
+
+        <details class="faq-item card reveal" style="transition-delay:.15s">
+          <summary class="p-6 flex items-center justify-between gap-4">
+            <span class="font-semibold token-text">Do you provide maintenance and support after delivery?</span>
+            <svg class="faq-chevron w-5 h-5 token-muted flex-shrink-0 transition-transform" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 token-muted text-sm leading-relaxed">Yes, we offer flexible maintenance plans. All
+            projects include a free 30-day post-launch support window. Extended plans are available monthly or annually.
+          </p>
+        </details>
+
+        <details class="faq-item card reveal" style="transition-delay:.2s">
+          <summary class="p-6 flex items-center justify-between gap-4">
+            <span class="font-semibold token-text">What technologies do you use for development?</span>
+            <svg class="faq-chevron w-5 h-5 token-muted flex-shrink-0 transition-transform" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 token-muted text-sm leading-relaxed">We use Flutter for mobile (Android & iOS),
+            React/Next.js for web frontends, Node.js and Firebase for backends, and Figma for design. We pick the right
+            stack for each project's needs.</p>
+        </details>
+
+      </div>
+      <script>
+        // FAQ chevron rotate 
+        document.querySelectorAll('.faq-item').forEach(d => {
+          d.addEventListener('toggle', () => {
+            const ch = d.querySelector('.faq-chevron');
+            ch.style.transform = d.open ? 'rotate(180deg)' : '';
+          });
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- LEFT: Instagram -->
+  <a href="https://instagram.com/airbebin" target="_blank" class="fixed bottom-6 left-6 z-50 
+          w-12 h-12 flex items-center justify-center 
+          rounded-xl shadow-lg 
+          bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 
+          hover:scale-110 transition duration-300 animate-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+      class="w-12 h-12 rounded-xl shadow-lg hover:scale-110 transition" />
+  </a>
+
+  <!-- RIGHT: WhatsApp -->
+  <a href="https://wa.me/916205163577" target="_blank" class="fixed bottom-6 right-6 z-50 
+          w-12 h-12 flex items-center justify-center 
+          rounded-full shadow-lg 
+          bg-green-500 hover:bg-green-600 
+          hover:scale-110 transition duration-300 animate-float">
+
+    <!-- Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 3.5A11.9 11.9 0 0012.1 0C5.6 0 .3 5.3.3 
+             11.8c0 2.1.5 4.1 1.5 5.9L0 24l6.5-1.7c1.7.9 
+             3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 
+             11.8-11.8 0-3.1-1.2-6-3.9-8.4zM12.1 
+             21c-1.7 0-3.3-.4-4.8-1.2l-.3-.2-3.9 
+             1 1-3.8-.2-.3c-1-1.5-1.5-3.2-1.5-4.9 
+             0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 
+             6.9 2.9 1.8 1.8 2.9 4.3 2.9 
+             6.9 0 5.4-4.4 9.8-9.8 
+             9.8zm5.4-7.3c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 
+             1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 
+             0-.5.1-.6.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5.1-.2 
+             0-.4 0-.6 0-.1-.7-1.6-1-2.2-.2-.5-.5-.4-.7-.4h-.6c-.2 
+             0-.6.1-.9.4-.3.3-1.2 1.2-1.2 
+             2.8s1.2 3.2 1.4 3.4c.2.3 
+             2.4 3.6 5.9 5 .8.3 1.4.5 
+             1.9.6.8.2 1.6.2 2.2.1.7-.1 
+             1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3z" />
+    </svg>
+  </a>
+
+  <footer class="relative bg-gray-50 px-6 py-16 overflow-hidden">
+
+    <!-- Big Background Text -->
+    <h1 class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] 
+             font-extrabold text-gray-200 opacity-40 pointer-events-none select-none">
+      AIRBEBIN
+    </h1>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+      <!-- Top Section -->
+      <div class="grid md:grid-cols-3 gap-10 items-start mb-12">
+
+        <!-- Left (Contact + Subscribe) -->
+        <div>
+          <p class="text-gray-500 mb-2">Contact us at</p>
+          <a href="mailto:ask.airbebin@gmail.com" target="_blank" class="font-semibold text-gray-800">
+            ask.airbebin@gmail.com
+          </a>
+
+          <!-- Input -->
+          <div class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
+            <input type="email" placeholder="Enter your email address"
+              class="flex-1 px-4 py-2 rounded-full outline-none text-sm" />
+            <button class="bg-black text-white px-6 py-2 rounded-full text-sm">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="md:ml-auto">
+          <p class="text-gray-500 font-medium mb-4">Links</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="#" class="hover:text-black">Home</a></li>
+            <li><a href="#" class="hover:text-black">Prebuilt</a></li>
+            <li><a href="#" class="hover:text-black">Customized</a></li>
+            <li><a href="#" class="hover:text-black">About Us</a></li>
+            <li><a href="#" class="hover:text-black">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <p class="text-gray-500 font-medium mb-4">More Resources</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="#" class="hover:text-black">Blogs</a></li>
+            <li><a href="#" class="hover:text-black">Terms & Conditions</a></li>
+            <li><a href="#" class="hover:text-black">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-black">Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/assets/public/script.js"></script>
+</body>
+
+</html>

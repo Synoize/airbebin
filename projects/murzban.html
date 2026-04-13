@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Murzban – Futuredesks</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--c-bg:#F8F8F6;--c-surface:#F0F0EC;--c-border:#DCDCD4;--c-text:#0A0A08;--c-muted:#6A6A60;--c-accent:#0A0A08;--c-card:#FFFFFF;--c-nav:rgba(248,248,246,0.92)}
+html.dark{--c-bg:#0A0A08;--c-surface:#111110;--c-border:#252520;--c-text:#F0F0EC;--c-muted:#808078;--c-accent:#F0F0EC;--c-card:#141412;--c-nav:rgba(10,10,8,0.92)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:var(--c-bg);color:var(--c-text);transition:background .35s,color .35s;overflow-x:hidden;cursor:none}
+.cursor{width:12px;height:12px;background:var(--c-text);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform .15s,width .2s,height .2s;transform:translate(-50%,-50%)}
+.cursor-ring{width:36px;height:36px;border:1px solid var(--c-text);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:transform .08s,width .2s,height .2s,opacity .2s;transform:translate(-50%,-50%);opacity:.4}
+nav{background:var(--c-nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);position:fixed;top:0;left:0;right:0;z-index:50;padding:1rem 2rem}
+.serif{font-family:'Playfair Display',serif}
+.btn-dark{background:var(--c-text);color:var(--c-bg);font-weight:600;border-radius:0;padding:.75rem 2rem;display:inline-block;transition:transform .2s,opacity .2s;letter-spacing:.06em;font-size:.85rem;text-transform:uppercase}
+.btn-dark:hover{opacity:.85}
+.btn-outline{border:1px solid var(--c-border);color:var(--c-text);padding:.7rem 2rem;display:inline-block;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;transition:border-color .2s}
+.btn-outline:hover{border-color:var(--c-text)}
+#theme-toggle{width:52px;height:28px;border-radius:0;border:1px solid var(--c-border);background:var(--c-surface);cursor:none;position:relative;transition:background .3s}
+#theme-toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;background:var(--c-text);transition:transform .3s}
+html.dark #theme-toggle::after{transform:translateX(24px)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.product-card{border:1px solid var(--c-border);transition:border-color .3s}
+.product-card:hover{border-color:var(--c-text)}
+.divider{height:1px;background:var(--c-border);margin:3rem 0}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav class="flex items-center justify-between max-w-7xl mx-auto">
+  <a href="futuredesks.html" class="font-bold text-lg flex items-center gap-2" style="color:var(--c-text)">
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#C8F544"/><path d="M7 8h14M7 14h9M7 20h12" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round"/></svg>
+    FUTUREDESKS
+  </a>
+  <div class="flex items-center gap-4">
+    <button id="theme-toggle" aria-label="Toggle theme"></button>
+    <a href="projects-index.html" class="btn-outline" style="font-size:.8rem">← All Work</a>
+  </div>
+</nav>
+
+<!-- HERO – editorial, bold -->
+<section class="pt-24 min-h-screen relative overflow-hidden flex flex-col justify-center" style="background:var(--c-bg)">
+  <!-- Big background text -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+    <div class="serif font-900 text-[20vw] leading-none opacity-[0.04]" style="color:var(--c-text)">MURZBAN</div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 py-20 relative z-10 w-full">
+    <div class="grid md:grid-cols-2 gap-0 items-end">
+      <div class="pb-12 md:pr-16 md:border-r" style="border-color:var(--c-border)">
+        <div class="text-xs font-semibold tracking-[0.25em] uppercase mb-8 reveal" style="color:var(--c-muted)">Fashion · E-Commerce · 2024</div>
+        <h1 class="serif font-900 text-7xl md:text-9xl leading-[0.95] mb-8 reveal" style="color:var(--c-text);transition-delay:.1s">MURZ<br/><em>BAN</em></h1>
+        <p class="text-lg leading-relaxed max-w-sm reveal" style="color:var(--c-muted);transition-delay:.2s">Clothing luxury, redefined for the digital generation. Where minimalism meets maximum desire.</p>
+        <div class="flex gap-4 mt-10 reveal" style="transition-delay:.3s">
+          <a href="#overview" class="btn-dark">Case Study</a>
+          <a href="projects-index.html" class="btn-outline">← Portfolio</a>
+        </div>
+      </div>
+      <!-- Editorial product mock -->
+      <div class="pl-0 md:pl-16 pt-12 md:pt-0 reveal" style="transition-delay:.2s">
+        <div style="background:var(--c-surface);border:1px solid var(--c-border);padding:2rem">
+          <div style="background:linear-gradient(180deg,#1C1C1C 0%,#2D2D2D 100%);height:280px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem">
+            <div class="text-center text-white">
+              <div style="font-size:4rem">👔</div>
+              <div class="serif italic text-xl mt-2" style="color:rgba(255,255,255,.7)">Tailored Excellence</div>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <div class="serif font-700 text-xl" style="color:var(--c-text)">The Noir Blazer</div>
+              <div class="text-sm mt-1" style="color:var(--c-muted)">Premium Italian wool · Black</div>
+            </div>
+            <div class="serif font-700 text-xl" style="color:var(--c-text)">₹12,999</div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <div class="flex-1 h-8 rounded-sm flex items-center justify-center text-xs font-semibold" style="background:var(--c-bg);border:1px solid var(--c-border);color:var(--c-muted)">S</div>
+            <div class="flex-1 h-8 rounded-sm flex items-center justify-center text-xs font-semibold" style="background:var(--c-text);color:var(--c-bg)">M</div>
+            <div class="flex-1 h-8 rounded-sm flex items-center justify-center text-xs font-semibold" style="background:var(--c-bg);border:1px solid var(--c-border);color:var(--c-muted)">L</div>
+            <div class="flex-1 h-8 rounded-sm flex items-center justify-center text-xs font-semibold" style="background:var(--c-bg);border:1px solid var(--c-border);color:var(--c-muted)">XL</div>
+          </div>
+          <div class="mt-4 text-center py-3 font-semibold text-sm tracking-widest uppercase" style="background:var(--c-text);color:var(--c-bg)">Add to Wardrobe</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider mx-12 reveal"></div>
+
+<!-- STATS -->
+<section class="py-12 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="reveal"><div class="serif font-900 text-5xl" style="color:var(--c-text)">2x</div><div class="text-sm mt-2 tracking-wide uppercase" style="color:var(--c-muted)">Avg Order Value</div></div>
+    <div class="reveal" style="transition-delay:.1s"><div class="serif font-900 text-5xl" style="color:var(--c-text)">40%</div><div class="text-sm mt-2 tracking-wide uppercase" style="color:var(--c-muted)">Return Rate Drop</div></div>
+    <div class="reveal" style="transition-delay:.2s"><div class="serif font-900 text-5xl" style="color:var(--c-text)">18d</div><div class="text-sm mt-2 tracking-wide uppercase" style="color:var(--c-muted)">Launch Timeline</div></div>
+    <div class="reveal" style="transition-delay:.3s"><div class="serif font-900 text-5xl" style="color:var(--c-text)">96</div><div class="text-sm mt-2 tracking-wide uppercase" style="color:var(--c-muted)">Lighthouse Score</div></div>
+  </div>
+</section>
+
+<div class="divider mx-12"></div>
+
+<!-- OVERVIEW -->
+<section id="overview" class="py-16 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+    <div class="reveal">
+      <div class="text-xs tracking-[0.2em] uppercase mb-6" style="color:var(--c-muted)">The Brief</div>
+      <h2 class="serif font-700 text-4xl mb-6" style="color:var(--c-text)">Fashion deserves a stage, not just a storefront</h2>
+      <p class="leading-relaxed mb-4" style="color:var(--c-muted)">Murzban's physical stores had atmosphere — scent, texture, the weight of fine fabric. We had to translate that sensory richness into pixels and interactions.</p>
+      <p class="leading-relaxed" style="color:var(--c-muted)">The result: a dark, editorial-first store with editorial lookbooks, zoomable fabric close-ups, size guide overlays, and a checkout that feels like stepping into the brand's world.</p>
+    </div>
+    <div class="reveal" style="transition-delay:.15s">
+      <div class="text-xs tracking-[0.2em] uppercase mb-6" style="color:var(--c-muted)">Key Features</div>
+      <div class="flex flex-col gap-4">
+        <div class="flex gap-4 items-start p-4" style="border-left:2px solid var(--c-text)">
+          <div>
+            <div class="font-semibold" style="color:var(--c-text)">Lookbook Collections</div>
+            <div class="text-sm mt-1" style="color:var(--c-muted)">Seasonal editorial shoots integrated into shoppable product pages.</div>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-4" style="border-left:2px solid var(--c-border)">
+          <div>
+            <div class="font-semibold" style="color:var(--c-text)">Smart Size Recommender</div>
+            <div class="text-sm mt-1" style="color:var(--c-muted)">AI-driven fit suggestions based on body measurements, reducing returns by 40%.</div>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-4" style="border-left:2px solid var(--c-border)">
+          <div>
+            <div class="font-semibold" style="color:var(--c-text)">Wishlist & Styling</div>
+            <div class="text-sm mt-1" style="color:var(--c-muted)">Curate personal collections and share complete outfit looks with friends.</div>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-4" style="border-left:2px solid var(--c-border)">
+          <div>
+            <div class="font-semibold" style="color:var(--c-text)">One-Page Checkout</div>
+            <div class="text-sm mt-1" style="color:var(--c-muted)">Streamlined single-page flow with address autofill and saved payment methods.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section class="py-16 px-6" style="background:var(--c-surface)">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <div class="text-xs tracking-[0.2em] uppercase mb-6" style="color:var(--c-muted)">Stack</div>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="px-4 py-2 text-sm font-medium tracking-wide" style="background:var(--c-card);color:var(--c-text);border:1px solid var(--c-border)">Next.js 14</span>
+      <span class="px-4 py-2 text-sm font-medium tracking-wide" style="background:var(--c-card);color:var(--c-text);border:1px solid var(--c-border)">Shopify Storefront API</span>
+      <span class="px-4 py-2 text-sm font-medium tracking-wide" style="background:var(--c-card);color:var(--c-text);border:1px solid var(--c-border)">Algolia Search</span>
+      <span class="px-4 py-2 text-sm font-medium tracking-wide" style="background:var(--c-card);color:var(--c-text);border:1px solid var(--c-border)">Cloudinary</span>
+      <span class="px-4 py-2 text-sm font-medium tracking-wide" style="background:var(--c-card);color:var(--c-text);border:1px solid var(--c-border)">Razorpay</span>
+    </div>
+  </div>
+</section>
+
+<section class="py-10 px-6 border-t" style="border-color:var(--c-border)">
+  <div class="max-w-7xl mx-auto flex justify-between gap-4">
+    <a href="tradescribe.html" class="btn-outline" style="font-size:.8rem">← Tradescribe</a>
+    <a href="greenfeels.html" class="btn-dark" style="font-size:.8rem">Next: Greenfeels →</a>
+  </div>
+</section>
+
+<script>
+const html=document.documentElement;
+html.className=localStorage.getItem('fd-theme')||'light';
+document.getElementById('theme-toggle').addEventListener('click',()=>{html.className=html.classList.contains('dark')?'light':'dark';localStorage.setItem('fd-theme',html.className)});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Custom cursor
+const cur=document.getElementById('cursor');
+const ring=document.getElementById('cursorRing');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px'});
+</script>
+</body>
+</html>

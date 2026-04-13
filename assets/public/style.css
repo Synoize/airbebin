@@ -1,0 +1,247 @@
+:root {
+    --c-bg: #FFFFFF;
+    --c-surface: #fbfbfb;
+    --c-border: #E2E2DC;
+    --c-text: #0A0A0A;
+    --c-muted: #6B6B6B;
+    --c-accent: #C8F544;
+    --c-accent-fg: #0A0A0A;
+    --c-card: #FFFFFF;
+    --c-nav: rgba(249, 249, 246, 0.88);
+}
+
+html.dark {
+    --c-bg: #0A0A0A;
+    --c-surface: #111111;
+    --c-border: #2A2A2A;
+    --c-text: #FFFFFF;
+    --c-muted: #888888;
+    --c-accent: #C8F544;
+    --c-accent-fg: #0A0A0A;
+    --c-card: #1A1A1A;
+    --c-nav: rgba(10, 10, 10, 0.88);
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 4px;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C8F544, #a6d90b);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a6d90b, #C8F544);
+}
+
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--c-bg);
+    color: var(--c-text);
+    transition: background .35s, color .35s;
+    overflow-x: hidden;
+}
+
+/* ── Utility helpers ─ */
+.token-bg {
+    background: var(--c-bg);
+}
+
+.token-surface {
+    background: var(--c-surface);
+}
+
+.token-card {
+    background: var(--c-card);
+}
+
+.token-border {
+    border-color: var(--c-border);
+}
+
+.token-text {
+    color: var(--c-text);
+}
+
+.token-muted {
+    color: var(--c-muted);
+}
+
+.token-accent {
+    background: var(--c-accent);
+    color: var(--c-accent-fg);
+}
+
+.token-accent-text {
+    color: var(--c-accent);
+}
+
+/* ── Hero grid lines ─ */
+.grid-bg {
+    background-image:
+        linear-gradient(var(--c-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--c-border) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+/* ── Buttons ───────── */
+.btn-primary {
+    background: var(--c-accent);
+    color: var(--c-accent-fg);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: .75rem 1.75rem;
+    transition: transform .2s, box-shadow .2s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    scale: calc(102%);
+    transition: all .2s ease-in-out;
+}
+
+.btn-outline {
+    border: 2px solid var(--c-border);
+    color: var(--c-text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: .7rem 1.7rem;
+    transition: border-color .2s, transform .2s;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    border-color: var(--c-accent);
+    scale: calc(102%);
+    transition: all .2s ease-in-out;
+}
+
+/* ── Cards ─────────── */
+.card {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: 20px;
+    transition: background .35s, border-color .35s, transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+}
+
+html.dark .card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+}
+
+/* ── Section label pill ─── */
+.pill {
+    display: inline-block;
+    padding: .25rem .9rem;
+    border-radius: 999px;
+    border: 1px solid var(--c-border);
+    color: var(--c-muted);
+    font-size: .78rem;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+/* ── Ticker banner ─── */
+.ticker {
+    background: var(--c-text);
+    color: var(--c-bg);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-inner {
+    display: flex;
+    animation: marquee 18s linear infinite;
+}
+
+/* ── Team avatar ring ─── */
+.avatar-ring {
+    border: 3px solid var(--c-accent);
+}
+
+/* ── FAQ accordion ─── */
+.faq-item summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ── Theme toggle ──── */
+#theme-toggle {
+    width: 52px;
+    height: 28px;
+    border-radius: 999px;
+    border: 2px solid var(--c-border);
+    background: var(--c-surface);
+    cursor: pointer;
+    position: relative;
+    transition: background .3s, border-color .3s;
+    flex-shrink: 0;
+}
+
+#theme-toggle::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--c-text);
+    transition: transform .3s, background .3s;
+}
+
+html.dark #theme-toggle::after {
+    transform: translateX(24px);
+}
+
+/* ── Scroll reveal ─── */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ── Logo img filter for dark ─── */
+html.dark .logo-invert {
+    filter: invert(1);
+}
+
+/* ── Trusted avatars ─ */
+.avatar-stack img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 3px solid var(--c-bg);
+    margin-left: -10px;
+    object-fit: cover;
+}
+
+.avatar-stack img:first-child {
+    margin-left: 0;
+}

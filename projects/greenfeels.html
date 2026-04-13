@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Greenfeels – Futuredesks</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--c-bg:#F2F8F2;--c-surface:#E6F2E6;--c-border:#C8DEC8;--c-text:#0A1A0A;--c-muted:#4A6A4A;--c-accent:#2D7A3A;--c-lime:#8CC84B;--c-card:#FFFFFF;--c-nav:rgba(242,248,242,0.92)}
+html.dark{--c-bg:#060E06;--c-surface:#0A140A;--c-border:#1A2E1A;--c-text:#D0EDD0;--c-muted:#5A8A5A;--c-accent:#4CAF50;--c-lime:#8CC84B;--c-card:#0E1A0E;--c-nav:rgba(6,14,6,0.92)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:var(--c-bg);color:var(--c-text);transition:background .35s,color .35s;overflow-x:hidden}
+nav{background:var(--c-nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);position:fixed;top:0;left:0;right:0;z-index:50;padding:1rem 2rem}
+.fraunces{font-family:'Fraunces',serif}
+.btn-green{background:var(--c-accent);color:#fff;font-weight:600;border-radius:999px;padding:.75rem 1.8rem;display:inline-block;transition:transform .2s,box-shadow .2s;font-size:.9rem}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(45,122,58,.4)}
+.btn-outline{border:2px solid var(--c-border);color:var(--c-text);border-radius:999px;padding:.7rem 1.8rem;display:inline-block;font-size:.9rem;transition:border-color .2s}
+.btn-outline:hover{border-color:var(--c-accent)}
+#theme-toggle{width:52px;height:28px;border-radius:999px;border:2px solid var(--c-border);background:var(--c-surface);cursor:pointer;position:relative;transition:background .3s}
+#theme-toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--c-text);transition:transform .3s}
+html.dark #theme-toggle::after{transform:translateX(24px)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.leaf-card{background:var(--c-card);border:1px solid var(--c-border);border-radius:24px;padding:1.75rem;transition:transform .3s,box-shadow .3s,border-color .3s}
+.leaf-card:hover{transform:translateY(-6px);border-color:var(--c-accent);box-shadow:0 20px 40px rgba(45,122,58,.1)}
+html.dark .leaf-card:hover{box-shadow:0 20px 40px rgba(45,122,58,.2)}
+.wavy{position:relative;overflow:hidden}
+.impact-bar{height:8px;border-radius:999px;background:linear-gradient(90deg,var(--c-lime),var(--c-accent));transition:width 1.5s ease}
+</style>
+</head>
+<body>
+<nav class="flex items-center justify-between max-w-7xl mx-auto">
+  <a href="futuredesks.html" class="font-bold text-lg flex items-center gap-2" style="color:var(--c-text)">
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#C8F544"/><path d="M7 8h14M7 14h9M7 20h12" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round"/></svg>
+    FUTUREDESKS
+  </a>
+  <div class="flex items-center gap-4">
+    <button id="theme-toggle" aria-label="Toggle theme"></button>
+    <a href="projects-index.html" class="btn-outline" style="font-size:.8rem">← All Work</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-24 relative overflow-hidden min-h-screen flex items-center" style="background:linear-gradient(160deg,#0D2818 0%,#1B4332 50%,#2D6A4F 100%)">
+  <!-- Organic blobs -->
+  <div class="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full opacity-20" style="background:radial-gradient(circle,#8CC84B,transparent)"></div>
+  <div class="absolute bottom-[-80px] left-[-80px] w-[400px] h-[400px] rounded-full opacity-15" style="background:radial-gradient(circle,#4CAF50,transparent)"></div>
+  <!-- Leaf pattern -->
+  <div class="absolute inset-0 opacity-5 text-[80px] select-none pointer-events-none flex flex-wrap gap-20 p-10 overflow-hidden">
+    🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-24 w-full relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 reveal" style="background:rgba(140,200,75,.15);border:1px solid rgba(140,200,75,.3)">
+          <span style="color:#8CC84B;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase">🌱 Sustainable E-Commerce</span>
+        </div>
+        <h1 class="fraunces font-700 text-6xl md:text-8xl text-white leading-[1.05] mb-6 reveal" style="transition-delay:.1s">green<em>feels</em></h1>
+        <p class="text-xl mb-8 leading-relaxed reveal" style="color:rgba(208,237,208,.7);transition-delay:.2s">Where conscious shopping becomes a joyful act. We built the digital home for eco-essentials — clean, fast, and kind to the planet.</p>
+        <div class="flex gap-4 flex-wrap reveal" style="transition-delay:.3s">
+          <a href="#overview" class="btn-green">Explore Case Study</a>
+          <a href="projects-index.html" class="btn-outline" style="border-color:rgba(200,222,200,.3);color:rgba(208,237,208,.7)">← Portfolio</a>
+        </div>
+      </div>
+      <!-- Product mockup -->
+      <div class="reveal" style="transition-delay:.25s">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(140,200,75,.2);border-radius:28px;padding:2rem;backdrop-filter:blur(10px)">
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div style="background:rgba(140,200,75,.1);border:1px solid rgba(140,200,75,.2);border-radius:16px;padding:1.25rem;text-align:center">
+              <div style="font-size:2rem;margin-bottom:.5rem">🪥</div>
+              <div style="color:#D0EDD0;font-size:.8rem;font-weight:600">Bamboo Brush</div>
+              <div style="color:#8CC84B;font-size:.85rem;margin-top:.25rem">₹149</div>
+            </div>
+            <div style="background:rgba(140,200,75,.1);border:1px solid rgba(140,200,75,.2);border-radius:16px;padding:1.25rem;text-align:center">
+              <div style="font-size:2rem;margin-bottom:.5rem">🧴</div>
+              <div style="color:#D0EDD0;font-size:.8rem;font-weight:600">Organic Shampoo</div>
+              <div style="color:#8CC84B;font-size:.85rem;margin-top:.25rem">₹349</div>
+            </div>
+            <div style="background:rgba(140,200,75,.1);border:1px solid rgba(140,200,75,.2);border-radius:16px;padding:1.25rem;text-align:center">
+              <div style="font-size:2rem;margin-bottom:.5rem">🕯️</div>
+              <div style="color:#D0EDD0;font-size:.8rem;font-weight:600">Soy Candle</div>
+              <div style="color:#8CC84B;font-size:.85rem;margin-top:.25rem">₹499</div>
+            </div>
+            <div style="background:rgba(140,200,75,.1);border:1px solid rgba(140,200,75,.2);border-radius:16px;padding:1.25rem;text-align:center">
+              <div style="font-size:2rem;margin-bottom:.5rem">🧼</div>
+              <div style="color:#D0EDD0;font-size:.8rem;font-weight:600">Natural Soap</div>
+              <div style="color:#8CC84B;font-size:.85rem;margin-top:.25rem">₹129</div>
+            </div>
+          </div>
+          <div style="background:rgba(140,200,75,.2);border:1px solid rgba(140,200,75,.3);border-radius:12px;padding:1rem;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="color:#8CC84B;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em">🌍 Your Impact</div>
+              <div style="color:#D0EDD0;font-size:.85rem;margin-top:.2rem">2.4 kg CO₂ saved this order</div>
+            </div>
+            <div style="color:#8CC84B;font-size:1.5rem">✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:-1px;left:0;right:0" preserveAspectRatio="none">
+    <path d="M0 80 Q360 20 720 60 Q1080 100 1440 30 L1440 80 Z" fill="var(--c-bg)"/>
+  </svg>
+</section>
+
+<!-- IMPACT STATS -->
+<section class="py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="fraunces font-700 text-4xl text-center mb-12 reveal" style="color:var(--c-text)">Measurable Environmental Impact</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center reveal">
+        <div class="fraunces font-700 text-6xl" style="color:var(--c-accent)">12K+</div>
+        <div class="text-sm mt-2 mb-4" style="color:var(--c-muted)">Plastic bottles replaced</div>
+        <div class="impact-bar" style="width:78%"></div>
+      </div>
+      <div class="text-center reveal" style="transition-delay:.1s">
+        <div class="fraunces font-700 text-6xl" style="color:var(--c-accent)">4.2T</div>
+        <div class="text-sm mt-2 mb-4" style="color:var(--c-muted)">CO₂ emissions prevented</div>
+        <div class="impact-bar" style="width:62%"></div>
+      </div>
+      <div class="text-center reveal" style="transition-delay:.2s">
+        <div class="fraunces font-700 text-6xl" style="color:var(--c-accent)">8K+</div>
+        <div class="text-sm mt-2 mb-4" style="color:var(--c-muted)">Conscious shoppers served</div>
+        <div class="impact-bar" style="width:85%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-20 px-6" style="background:var(--c-surface)">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="fraunces font-700 text-4xl text-center mb-12 reveal" style="color:var(--c-text)">What We Designed & Built</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="leaf-card reveal">
+        <div style="font-size:2rem;margin-bottom:1rem">♻️</div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--c-text)">Carbon Footprint Tracker</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Every purchase shows its environmental impact — CO₂ saved, plastic avoided, trees equivalent.</p>
+      </div>
+      <div class="leaf-card reveal" style="transition-delay:.1s">
+        <div style="font-size:2rem;margin-bottom:1rem">🔍</div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--c-text)">Ingredient Transparency</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Full ingredient lists, certifications (vegan, cruelty-free, organic) displayed prominently on every product.</p>
+      </div>
+      <div class="leaf-card reveal" style="transition-delay:.2s">
+        <div style="font-size:2rem;margin-bottom:1rem">📦</div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--c-text)">Eco Packaging Info</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Packaging details shown at checkout — compostable, recycled, or refillable — so buyers can make informed choices.</p>
+      </div>
+      <div class="leaf-card reveal" style="transition-delay:.05s">
+        <div style="font-size:2rem;margin-bottom:1rem">🔄</div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--c-text)">Subscription Refills</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Auto-refill subscriptions for daily essentials with pause/skip functionality and savings tracker.</p>
+      </div>
+      <div class="leaf-card reveal" style="transition-delay:.15s">
+        <div style="font-size:2rem;margin-bottom:1rem">🎯</div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--c-text)">Green Score Filter</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Browse by sustainability score — our proprietary rating of each product's environmental credentials.</p>
+      </div>
+      <div class="leaf-card reveal" style="transition-delay:.25s">
+        <div style="font-size:2rem;margin-bottom:1rem">🤝</div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--c-text)">Brand Stories</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Rich brand pages with founding story, sourcing practices, and founder interviews to build authentic trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section class="py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <h2 class="fraunces font-700 text-3xl mb-8" style="color:var(--c-text)">Tech Stack</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="px-4 py-2 rounded-full text-sm font-medium" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">React.js</span>
+      <span class="px-4 py-2 rounded-full text-sm font-medium" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">WooCommerce</span>
+      <span class="px-4 py-2 rounded-full text-sm font-medium" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">Node.js</span>
+      <span class="px-4 py-2 rounded-full text-sm font-medium" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">Stripe</span>
+      <span class="px-4 py-2 rounded-full text-sm font-medium" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">AWS S3</span>
+      <span class="px-4 py-2 rounded-full text-sm font-medium" style="background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)">Tailwind CSS</span>
+    </div>
+  </div>
+</section>
+
+<section class="py-10 px-6 border-t" style="border-color:var(--c-border)">
+  <div class="max-w-7xl mx-auto flex justify-between gap-4">
+    <a href="murzban.html" class="btn-outline" style="font-size:.85rem">← Murzban</a>
+    <a href="momentz.html" class="btn-green" style="font-size:.85rem">Next: Momentz →</a>
+  </div>
+</section>
+
+<script>
+const html=document.documentElement;
+html.className=localStorage.getItem('fd-theme')||'light';
+document.getElementById('theme-toggle').addEventListener('click',()=>{html.className=html.classList.contains('dark')?'light':'dark';localStorage.setItem('fd-theme',html.className)});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Animate impact bars on scroll
+const bars=document.querySelectorAll('.impact-bar');
+const barObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const w=e.target.style.width;e.target.style.width='0';setTimeout(()=>e.target.style.width=w,100)}}),{threshold:.5});
+bars.forEach(b=>{const w=b.style.width;b.style.width='0';barObs.observe(b)});
+</script>
+</body>
+</html>
