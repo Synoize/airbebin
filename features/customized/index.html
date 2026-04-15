@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="../../assets/public/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coustomized – Airbebin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/public/style.css">
+  <script src="../../tailwind.config.js"></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full p-4">
+    <div
+      class="max-w-4xl mx-auto flex items-center justify-between gap-4 py-3 md:py-4 px-6 token-card border token-border rounded-full ">
+
+      <!-- Logo -->
+      <a href="/" class="font-display font-800 text-2xl tracking-tight token-text flex items-center gap-2">
+        <img src="/assets/public/logo.png" alt="" class="w-10 logo-invert">
+        AIRBEBIN
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium token-muted">
+        <a href="/features" class="hover:token-text transition-colors text-[var(--c-text)]">Features</a>
+        <a href="/projects" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Projects</a>
+        <a href="/about-us" class="hover:token-text transition-colors hover:text-[var(--c-text)]">About Us</a>
+        <a href="/contact-us" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Contact Us</a>
+      </div>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="https://wa.me/916205163577" class="hidden md:inline-block btn-primary text-sm">Let's Talk</a>
+
+        <!-- Mobile hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg token-surface border token-border token-text">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <rect y="3" width="20" height="2" rx="1" />
+            <rect y="9" width="20" height="2" rx="1" />
+            <rect y="15" width="20" height="2" rx="1" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu"
+      class="md:hidden overflow-hidden max-h-0 opacity-0 -translate-y-4 transition-all duration-300 ease-in-out">
+
+      <div class="mt-2 flex flex-col gap-4 py-4 token-card border token-border rounded-2xl p-5">
+        <a href="/features" onclick="closeMobile()">Features</a>
+        <a href="/projects" onclick="closeMobile()">Projects</a>
+        <a href="/about-us" onclick="closeMobile()">About Us</a>
+        <a href="/contact-us" onclick="closeMobile()">Contact Us</a>
+        <a href="https://wa.me/916205163577" onclick="closeMobile()" class="btn-primary text-center">Let's Talk</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="grid-bg pt-40 pb-28 md:pt-52 md:pb-32 px-6 text-center relative overflow-hidden">
+    <img src="/assets/images/logos/object_1.png" alt="Object Preview"
+      class="absolute left-6 md:left-20 top-64 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert" />
+
+    <img src="/assets/images/logos/object_2.png" alt="Object Preview"
+      class="absolute right-6 md:right-20 top-60 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert" />
+
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-15"
+      style="background:radial-gradient(circle,#C8F544 0%,transparent 70%)">
+    </div>
+    <div class="max-w-3xl mx-auto relative z-10">
+      <span class="pill reveal">Custom Development</span>
+
+      <h1 class="font-display font-800 text-5xl md:text-7xl mt-4 mb-6 leading-[1.05] reveal"
+        style="color:var(--c-text);transition-delay:.1s">
+        Built From Scratch,<br />
+        <span style="color:var(--c-accent)">Designed for You</span>
+      </h1>
+
+      <p class="text-lg mb-10 reveal" style="color:var(--c-muted);transition-delay:.2s">
+        Every product is built from zero with precision, flexibility, and performance in mind — no templates, no
+        shortcuts, just pure custom engineering.
+      </p>
+    </div>
+  </section>
+
+  <div class="ticker py-4 overflow-hidden text-sm md:text-2xl font-display font-700 tracking-widest uppercase">
+
+    <div id="marquee-left" class="ticker-inner flex gap-8 md:gap-16 w-max items-center 
+                animate-[marqueeLeft_25s_linear_infinite]">
+      <!-- Logos -->
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+    </div>
+
+  </div>
+
+  <section class="py-24 px-6 token-surface">
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Heading -->
+      <div class="text-center mb-16">
+        <span class="pill">Projects</span>
+
+        <h2 class="font-display font-800 text-4xl md:text-5xl mt-4 mb-6 token-text">
+          Our Top Projects
+        </h2>
+
+        <!-- FILTER BUTTONS -->
+        <div class="flex justify-center gap-4">
+          <button class="filter-btn px-5 py-2 rounded-full bg-black text-white border token-border"
+            data-filter="web">Websites</button>
+          <button class="filter-btn px-5 py-2 rounded-full border token-border" data-filter="app">Applications</button>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div id="projects">
+
+        <!-- PROJECT -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+          <div class="card p-6">
+            <img src="/assets/images/features/customized/lal.png" class="rounded-xl">
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Lal Sweets Ecom Website</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Modern sweets store with premium UI for smooth shopping experience</li>
+              <li>✔ Category-wise browsing including sweets, snacks, and festive combos</li>
+              <li>✔ Fast checkout system with optimized cart flow and user journey</li>
+              <li>✔ SEO-friendly architecture with dynamic product showcase and scalability</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Kirtilals Luxury Website</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Premium diamond jewellery store with elegant UI and brand-focused design</li>
+              <li>✔ Clean navigation structure for quick browsing across collections</li>
+              <li>✔ Integrated filtering, categories, and pricing optimization</li>
+              <li>✔ Fully responsive layout optimized for mobile-first experience</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+
+          <div class="card p-6 order-1 md:order-2">
+            <img src="/assets/images/features/customized/kirtilal.png" class="rounded-xl">
+          </div>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="app">
+          <div class="card p-6">
+            <img src="/assets/images/features/customized/tradescribe.png" class="rounded-xl">
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Tradescribe Platform</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ AI-based trading journal for tracking performance and strategies</li>
+              <li>✔ Advanced analytics dashboard with real-time insights</li>
+              <li>✔ Designed UI for traders to analyze win rates and patterns</li>
+              <li>✔ Built with scalability for long-term trader growth</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Murzban Clothing</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Modern fashion store with premium layout and strong branding</li>
+              <li>✔ Category-based browsing for men & women collections</li>
+              <li>✔ Clean UI with focus on product visuals and storytelling</li>
+              <li>✔ Optimized checkout flow for higher conversion rates</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+
+          <div class="card p-6 order-1 md:order-2">
+            <img src="/assets/images/features/customized/murzban.png" class="rounded-xl">
+          </div>
+        </div>
+
+
+        <!-- 5 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+          <div class="card p-6">
+            <img src="/assets/images/projects/greenfeels.png" class="rounded-xl">
+          </div>
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Greenfeels Sustainable Store</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Eco-friendly product marketplace with clean UI</li>
+              <li>✔ Highlighted sustainability messaging & brand story</li>
+              <li>✔ Optimized mobile-first shopping experience</li>
+              <li>✔ Built for scalability and long-term growth</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Momentz Decor Store</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Premium home decor platform with modern layout</li>
+              <li>✔ Clean product grid & filtering system</li>
+              <li>✔ Fast loading with optimized assets</li>
+              <li>✔ Designed for high conversion rates</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+          <div class="card p-6 order-1 md:order-2">
+            <img src="/assets/images/projects/momentz.png" class="rounded-xl">
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+          <div class="card p-6">
+            <img src="/assets/images/projects/street9.png" class="rounded-xl">
+          </div>
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Street9 Fashion Store</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Trend-driven fashion platform with modern UX</li>
+              <li>✔ Category filters for dresses, streetwear, etc.</li>
+              <li>✔ Smooth navigation and quick checkout</li>
+              <li>✔ Built for high engagement and retention</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="app">
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Plutoze Crypto Platform</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Multi-chain crypto wallet with secure transactions</li>
+              <li>✔ Fast UI for tracking assets and analytics</li>
+              <li>✔ Real-time data integration</li>
+              <li>✔ Built with high-performance backend</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View App</a>
+          </div>
+          <div class="card p-6 order-1 md:order-2">
+            <img src="/assets/images/projects/plutoze.png" class="rounded-xl">
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+          <div class="card p-6">
+            <img src="/assets/images/projects/farmfresh.png" class="rounded-xl">
+          </div>
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Farm Fresh Co.</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Organic food platform with clean branding</li>
+              <li>✔ Product storytelling & category design</li>
+              <li>✔ Fast checkout & delivery integration</li>
+              <li>✔ Built for modern eco-conscious users</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Daily Objects Store</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Lifestyle product platform with premium UI</li>
+              <li>✔ Clean grid system and filters</li>
+              <li>✔ Mobile optimized experience</li>
+              <li>✔ Built for high scalability</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+          <div class="card p-6 order-1 md:order-2">
+            <img src="/assets/images/projects/dailyobjects.png" class="rounded-xl">
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="app">
+          <div class="card p-6">
+            <img src="/assets/images/projects/booking.png" class="rounded-xl">
+          </div>
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Booking Management App</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Appointment booking system with dashboard</li>
+              <li>✔ Real-time availability tracking</li>
+              <li>✔ User & admin panel integration</li>
+              <li>✔ Built for service-based businesses</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View App</a>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Portfolio Showcase Platform</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Modern portfolio UI with animations</li>
+              <li>✔ Smooth scrolling and transitions</li>
+              <li>✔ Fully responsive design</li>
+              <li>✔ Built for personal branding</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+          <div class="card p-6 order-1 md:order-2">
+            <img src="/assets/images/projects/portfolio.png" class="rounded-xl">
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="app">
+          <div class="card p-6">
+            <img src="/assets/images/projects/chatapp.png" class="rounded-xl">
+          </div>
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Real-Time Chat App</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ Live messaging with socket integration</li>
+              <li>✔ Public & private chat rooms</li>
+              <li>✔ Fast UI updates and notifications</li>
+              <li>✔ Built for scalability and performance</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View App</a>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="project-item grid md:grid-cols-2 gap-12 items-center mb-20" data-category="web">
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Startup Landing Page</h3>
+            <ul class="text-sm token-muted space-y-3 mb-6">
+              <li>✔ High-converting landing page design</li>
+              <li>✔ CTA optimized layout</li>
+              <li>✔ Performance optimized</li>
+              <li>✔ Built for marketing campaigns</li>
+            </ul>
+            <a href="#" class="px-5 py-2 rounded-full text-black text-sm"
+              style="background-color: var(--c-accent); ">View Website</a>
+          </div>
+          <div class="card p-6 order-1 md:order-2">
+            <img src="/assets/images/projects/landing.png" class="rounded-xl">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.project-item');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+
+        // Active button UI
+        buttons.forEach(b => {
+          b.classList.remove('bg-black', 'text-white', 'active');
+          b.classList.add('token-surface', 'border', 'token-border');
+        });
+
+        btn.classList.add('bg-black', 'text-white', 'active');
+        btn.classList.remove('token-surface', 'border', 'token-border');
+
+        const filter = btn.getAttribute('data-filter');
+
+        items.forEach(item => {
+          if (item.getAttribute('data-category') === filter) {
+            item.style.display = 'grid';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+      });
+    });
+  </script>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 text-center">
+    <div class="max-w-2xl mx-auto reveal">
+      <h2 class="font-display font-800 text-4xl md:text-5xl mb-4" style="color:var(--c-text)">Your Project Next?</h2>
+      <p class="mb-8" style="color:var(--c-muted)">Let's build something extraordinary together.</p>
+      <a href="/contact-us" class="btn-primary">Start a Project →</a>
+    </div>
+  </section>
+
+  <!-- LEFT: Instagram -->
+  <a href="https://instagram.com/airbebin" target="_blank" class="fixed bottom-6 left-6 z-50 
+          w-12 h-12 flex items-center justify-center 
+          rounded-xl shadow-lg 
+          bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 
+          hover:scale-110 transition duration-300 animate-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+      class="w-12 h-12 rounded-xl shadow-lg hover:scale-110 transition" />
+  </a>
+
+  <!-- RIGHT: WhatsApp -->
+  <a href="https://wa.me/916205163577" target="_blank" class="fixed bottom-6 right-6 z-50 
+          w-12 h-12 flex items-center justify-center 
+          rounded-full shadow-lg 
+          bg-green-500 hover:bg-green-600 
+          hover:scale-110 transition duration-300 animate-float">
+
+    <!-- Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 3.5A11.9 11.9 0 0012.1 0C5.6 0 .3 5.3.3 
+             11.8c0 2.1.5 4.1 1.5 5.9L0 24l6.5-1.7c1.7.9 
+             3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 
+             11.8-11.8 0-3.1-1.2-6-3.9-8.4zM12.1 
+             21c-1.7 0-3.3-.4-4.8-1.2l-.3-.2-3.9 
+             1 1-3.8-.2-.3c-1-1.5-1.5-3.2-1.5-4.9 
+             0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 
+             6.9 2.9 1.8 1.8 2.9 4.3 2.9 
+             6.9 0 5.4-4.4 9.8-9.8 
+             9.8zm5.4-7.3c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 
+             1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 
+             0-.5.1-.6.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5.1-.2 
+             0-.4 0-.6 0-.1-.7-1.6-1-2.2-.2-.5-.5-.4-.7-.4h-.6c-.2 
+             0-.6.1-.9.4-.3.3-1.2 1.2-1.2 
+             2.8s1.2 3.2 1.4 3.4c.2.3 
+             2.4 3.6 5.9 5 .8.3 1.4.5 
+             1.9.6.8.2 1.6.2 2.2.1.7-.1 
+             1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3z" />
+    </svg>
+  </a>
+
+  <footer class="relative bg-gray-50 px-6 py-16 overflow-hidden">
+
+    <!-- Big Background Text -->
+    <h1 class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] 
+             font-extrabold text-gray-200 opacity-40 pointer-events-none select-none">
+      AIRBEBIN
+    </h1>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+      <!-- Top Section -->
+      <div class="grid md:grid-cols-3 gap-10 items-start mb-12">
+
+        <!-- Left (Contact + Subscribe) -->
+        <div>
+          <p class="text-gray-500 mb-2">Contact us at</p>
+          <a href="mailto:ask.airbebin@gmail.com" target="_blank" class="font-semibold text-gray-800">
+            ask.airbebin@gmail.com
+          </a>
+
+          <!-- Input -->
+          <div class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
+            <input type="email" placeholder="Enter your email address"
+              class="flex-1 px-4 py-2 rounded-full outline-none text-sm" />
+            <button class="bg-black text-white px-6 py-2 rounded-full text-sm">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="md:ml-auto">
+          <p class="text-gray-500 font-medium mb-4">Links</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="../" class="hover:text-black">Home</a></li>
+            <li><a href="/features" class="hover:text-black">Features</a></li>
+            <li><a href="/projects" class="hover:text-black">Projects</a></li>
+            <li><a href="/about-us" class="hover:text-black">About Us</a></li>
+            <li><a href="/contact-us" class="hover:text-black">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <p class="text-gray-500 font-medium mb-4">More Resources</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="/blogs" class="hover:text-black">Blogs</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-black">Terms & Conditions</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-black">Privacy Policy</a></li>
+            <li><a href="refund-policy.html" class="hover:text-black">Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/assets/public/script.js"></script>
+</body>
+
+</html>
