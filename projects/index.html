@@ -3,421 +3,587 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="shortcut icon" href="../assets/public/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Work – Airbebin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-  <script>
-    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { accent: '#C8F544' } }, fontFamily: { display: ['Syne', 'sans-serif'], body: ['Outfit', 'sans-serif'] } } } }
-  </script>
-  <style>
-    :root {
-      --c-bg: #F9F9F6;
-      --c-surface: #F2F2EE;
-      --c-border: #E2E2DC;
-      --c-text: #0A0A0A;
-      --c-muted: #6B6B6B;
-      --c-accent: #C8F544;
-      --c-card: #FFFFFF;
-      --c-nav: rgba(249, 249, 246, 0.9)
-    }
-
-    html.dark {
-      --c-bg: #0A0A0A;
-      --c-surface: #111111;
-      --c-border: #2A2A2A;
-      --c-text: #F9F9F6;
-      --c-muted: #888888;
-      --c-accent: #C8F544;
-      --c-card: #1A1A1A;
-      --c-nav: rgba(10, 10, 10, 0.9)
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    body {
-      font-family: 'Outfit', sans-serif;
-      background: var(--c-bg);
-      color: var(--c-text);
-      transition: background .35s, color .35s;
-      overflow-x: hidden
-    }
-
-    nav {
-      background: var(--c-nav);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--c-border);
-      transition: background .35s, border-color .35s
-    }
-
-    .card {
-      background: var(--c-card);
-      border: 1px solid var(--c-border);
-      border-radius: 24px;
-      overflow: hidden;
-      transition: transform .3s, box-shadow .3s, border-color .3s
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, .1);
-      border-color: var(--c-accent)
-    }
-
-    html.dark .card:hover {
-      box-shadow: 0 24px 48px rgba(0, 0, 0, .5)
-    }
-
-    .pill {
-      display: inline-block;
-      padding: .25rem .9rem;
-      border-radius: 999px;
-      border: 1px solid var(--c-border);
-      color: var(--c-muted);
-      font-size: .78rem;
-      letter-spacing: .06em;
-      text-transform: uppercase
-    }
-
-    .btn-primary {
-      background: var(--c-accent);
-      color: #0A0A0A;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      border-radius: 999px;
-      padding: .7rem 1.6rem;
-      display: inline-block;
-      transition: transform .2s, box-shadow .2s
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200, 245, 68, .35)
-    }
-
-    .btn-outline {
-      border: 2px solid var(--c-border);
-      color: var(--c-text);
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      border-radius: 999px;
-      padding: .65rem 1.6rem;
-      display: inline-block;
-      transition: border-color .2s, transform .2s
-    }
-
-    .btn-outline:hover {
-      border-color: var(--c-accent);
-      transform: translateY(-2px)
-    }
-
-    #theme-toggle {
-      width: 52px;
-      height: 28px;
-      border-radius: 999px;
-      border: 2px solid var(--c-border);
-      background: var(--c-surface);
-      cursor: pointer;
-      position: relative;
-      transition: background .3s, border-color .3s;
-      flex-shrink: 0
-    }
-
-    #theme-toggle::after {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--c-text);
-      transition: transform .3s
-    }
-
-    html.dark #theme-toggle::after {
-      transform: translateX(24px)
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .6s ease, transform .6s ease
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none
-    }
-
-    .tag {
-      display: inline-block;
-      padding: .2rem .7rem;
-      border-radius: 999px;
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-transform: uppercase
-    }
-
-    .grid-bg {
-      background-image: linear-gradient(var(--c-border) 1px, transparent 1px), linear-gradient(90deg, var(--c-border) 1px, transparent 1px);
-      background-size: 60px 60px
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/public/style.css">
+  <script src="../tailwind.config.js"></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
 </head>
 
 <body>
-  <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="futuredesks.html" class="font-display font-800 text-xl" style="color:var(--c-text)">
-        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" class="inline mr-2">
-          <rect width="28" height="28" rx="6" fill="#C8F544" />
-          <path d="M7 8h14M7 14h9M7 20h12" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" />
-        </svg>
-        FUTUREDESKS
+  <!-- NAV -->
+  <nav class="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full p-4">
+    <div
+      class="max-w-4xl mx-auto flex items-center justify-between gap-4 py-3 md:py-4 px-6 token-card border token-border rounded-full ">
+
+      <!-- Logo -->
+      <a href="/" class="font-display font-800 text-2xl tracking-tight token-text flex items-center gap-2">
+        <img src="/assets/public/logo.png" alt="" class="w-10 logo-invert">
+        AIRBEBIN
       </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium token-muted">
+        <a href="/features" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Features</a>
+        <a href="/projects" class="hover:token-text transition-colors text-[var(--c-text)]">Projects</a>
+        <a href="/about-us" class="hover:token-text transition-colors hover:text-[var(--c-text)]">About Us</a>
+        <a href="/contact-us" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Contact Us</a>
+      </div>
+
+      <!-- Right side -->
       <div class="flex items-center gap-4">
         <button id="theme-toggle" aria-label="Toggle theme"></button>
-        <a href="futuredesks.html" class="btn-outline text-sm">← Back Home</a>
+        <a href="https://wa.me/916205163577" class="hidden md:inline-block btn-primary text-sm">Let's Talk</a>
+
+        <!-- Mobile hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg token-surface border token-border token-text">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <rect y="3" width="20" height="2" rx="1" />
+            <rect y="9" width="20" height="2" rx="1" />
+            <rect y="15" width="20" height="2" rx="1" />
+          </svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu"
+      class="md:hidden overflow-hidden max-h-0 opacity-0 -translate-y-4 transition-all duration-300 ease-in-out">
+
+      <div class="mt-2 flex flex-col gap-4 py-4 token-card border token-border rounded-2xl p-5">
+        <a href="/features" onclick="closeMobile()">Features</a>
+        <a href="/projects" onclick="closeMobile()">Projects</a>
+        <a href="/about-us" onclick="closeMobile()">About Us</a>
+        <a href="/contact-us" onclick="closeMobile()">Contact Us</a>
+        <a href="https://wa.me/916205163577" onclick="closeMobile()" class="btn-primary text-center">Let's Talk</a>
+      </div>
+
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="grid-bg pt-36 pb-20 px-6 text-center relative overflow-hidden">
+  <section class="grid-bg pt-40 pb-28 md:pt-52 md:pb-32 px-6 text-center relative overflow-hidden">
+    <img src="/assets/images/logos/object_1.png" alt="Object Preview"
+      class="absolute left-6 md:left-20 top-64 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert" />
+
+    <img src="/assets/images/logos/object_2.png" alt="Object Preview"
+      class="absolute right-6 md:right-20 top-60 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert" />
+
     <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-15"
-      style="background:radial-gradient(circle,#C8F544 0%,transparent 70%)"></div>
+      style="background:radial-gradient(circle,#C8F544 0%,transparent 70%)">
+    </div>
     <div class="max-w-3xl mx-auto relative z-10">
-      <span class="pill reveal">Our Portfolio</span>
+      <span class="pill reveal">Our Works</span>
       <h1 class="font-display font-800 text-5xl md:text-7xl mt-4 mb-6 leading-[1.05] reveal"
         style="color:var(--c-text);transition-delay:.1s">
         Turning Visions Into<br /><span style="color:var(--c-accent)">Digital Reality</span>
       </h1>
       <p class="text-lg mb-10 reveal" style="color:var(--c-muted);transition-delay:.2s">Six distinct products, six
         unique stories. Each built with precision, craft, and deep product thinking.</p>
-      <div class="flex flex-wrap justify-center gap-3 reveal" style="transition-delay:.3s">
-        <button onclick="filter('all')" id="f-all" class="tag btn-primary">All Projects</button>
-        <button onclick="filter('ecom')" id="f-ecom" class="tag btn-outline">E-Commerce</button>
-        <button onclick="filter('luxury')" id="f-luxury" class="tag btn-outline">Luxury</button>
-        <button onclick="filter('saas')" id="f-saas" class="tag btn-outline">SaaS / Platform</button>
+
+    </div>
+  </section>
+
+  <div class="ticker py-4 overflow-hidden text-sm md:text-2xl font-display font-700 tracking-widest uppercase">
+
+    <div id="marquee-left" class="ticker-inner flex gap-8 md:gap-16 w-max items-center 
+                animate-[marqueeLeft_25s_linear_infinite]">
+      <!-- Logos -->
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+    </div>
+
+  </div>
+
+  <section class="py-24 px-6 token-surface">
+
+    <div class="max-w-5xl mx-auto">
+
+      <!-- HEADER -->
+      <div class="text-center mb-16">
+
+        <span class="pill">Projects</span>
+        <h2 class="font-display font-700 text-4xl md:text-5xl token-text">Our Top Projects</h2>
+
+        <!-- FILTER BUTTONS -->
+        <div class="flex justify-center gap-3 mt-6 flex-wrap">
+
+          <button onclick="filter('all')" id="f-all"
+            class="filter-btn bg-black text-white px-4 py-2 rounded-full text-xs md:text-sm">
+            All
+          </button>
+
+          <button onclick="filter('ecom')" id="f-ecom"
+            class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs md:text-sm">
+            E-Commerce
+          </button>
+
+          <button onclick="filter('business')" id="f-business"
+            class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs md:text-sm">
+            Business
+          </button>
+
+          <button onclick="filter('services')" id="f-services"
+            class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs md:text-sm">
+            Services
+          </button>
+
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div id="projects-container" class="space-y-24">
+
+        <!-- 1 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="business">
+
+          <div class="bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/trudocsglobal.png" class="rounded-xl">
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-700 mb-6">Trudocs Global</h3>
+
+            <div class="space-y-4 text-sm" style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Easy document services & verification platform.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>Simple, secure and user-friendly experience.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Streamlined digital documentation workflow.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>Reliable and efficient service access.</p>
+              </div>
+            </div>
+            <a href="https://trudocsglobal.com" target="_blank"
+              class="mt-6 inline-block px-5 py-2 rounded-full text-sm" style="background-color: var(--c-accent); ">View App</a>
+          </div>
+
+        </div>
+
+        <!-- 2 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="business">
+
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-6">The Story Creators</h3>
+
+            <div class="space-y-4 text-sm " style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Photography portfolio showcasing creative work.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>Designed for storytelling through visuals.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Clean and minimal UI for better focus.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>Highlights services and client work.</p>
+              </div>
+            </div>
+
+            <a href="https://thestorycreators.photography" target="_blank"
+              class="mt-6 inline-block px-5 py-2 rounded-full text-sm"style="background-color: var(--c-accent); ">View App</a>
+          </div>
+
+          <div class="order-1 md:order-2 bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/thestorycreators.png" class="rounded-xl">
+          </div>
+
+        </div>
+
+        <!-- 3 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="ecom">
+
+          <div class="bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/bigbrands.png" class="rounded-xl">
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-700 mb-6">Big Brands India</h3>
+
+            <div class="space-y-4 text-sm" style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Premium watches e-commerce platform.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>Seamless product browsing experience.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Secure checkout and payments.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>Smooth and responsive UI design.</p>
+              </div>
+            </div>
+
+            <a href="https://ecom.websolvit.com" target="_blank"
+              class="mt-6 inline-block px-5 py-2 rounded-full text-sm"style="background-color: var(--c-accent); ">View App</a>
+          </div>
+
+        </div>
+
+        <!-- 4 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="services">
+
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-6">Appliance Sakhi</h3>
+
+            <div class="space-y-4 text-sm" style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Home appliance services platform.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>Easy service booking system.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Clear service listings.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>User-friendly interface.</p>
+              </div>
+            </div>
+
+            <a href="https://appliancesakhi.in" target="_blank"
+              class="mt-6 inline-block px-5 py-2 rounded-full text-sm"style="background-color: var(--c-accent); ">View App</a>
+          </div>
+
+          <div class="order-1 md:order-2 bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/appliancesakhi.png" class="rounded-xl">
+          </div>
+
+        </div>
+
+        <!-- 5 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="business">
+
+          <div class="bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/nagare.png" class="rounded-xl">
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-700 mb-6">Nagare Industries</h3>
+
+            <div class="space-y-4 text-sm" style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Rice manufacturing & export business website.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>Showcases product varieties.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Highlights quality standards.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>Global supply capabilities.</p>
+              </div>
+            </div>
+
+            <a href="https://nagareindustries.netlify.app/" target="_blank"
+              class="mt-6 inline-block px-5 py-2 rounded-full text-sm"style="background-color: var(--c-accent); ">View App</a>
+          </div>
+
+        </div>
+
+        <!-- 6 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="services">
+
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-6">Moderix Solutions</h3>
+
+            <div class="space-y-4 text-sm" style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Digital marketing & branding services.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>SEO and advertising solutions.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Social media growth strategies.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>Focused on business growth.</p>
+              </div>
+            </div>
+
+            <a href="https://moderixsolutions.netlify.app/" target="_blank"
+              class="mt-6 inline-block px-5 py-2 rounded-full text-sm"style="background-color: var(--c-accent); ">View App</a>
+          </div>
+
+          <div class="order-1 md:order-2 bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/moderixsolutions.png" class="rounded-xl">
+          </div>
+
+        </div>
+
+        <!-- 7 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="services">
+
+          <div class="bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/vsmtechnologies.png" class="rounded-xl">
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-700 mb-6">VSMTechnologies Solutions</h3>
+
+            <div class="space-y-4 text-sm" style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Tech & communication service platform.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>SMS & voice solutions integration.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Custom IT services.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>Enterprise-level solutions.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 8 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="business">
+
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-6">CIRI UAE</h3>
+
+            <div class="space-y-4 text-sm" style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Corporate UAE-based website.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>Global business representation.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Professional service showcase.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>Clean and modern design.</p>
+              </div>
+            </div>
+
+            <a href="https://ciriuae.netlify.app/" target="_blank"
+              class="mt-6 inline-block px-5 py-2 rounded-full text-sm"style="background-color: var(--c-accent); ">View App</a>
+          </div>
+
+          <div class="order-1 md:order-2 bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/ciriuae.png" class="rounded-xl">
+          </div>
+
+        </div>
+
+        <!-- 9 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="business">
+
+          <div class="bg-white rounded-2xl shadow-sm">
+            <img src="/assets/images/projects/aieconstruction.png" class="rounded-xl">
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-700 mb-6">AIE Construction</h3>
+
+            <div class="space-y-4 text-sm" style="color:var(--c-muted)">
+              <div class="flex gap-3"><span>01</span>
+                <p>Construction & infrastructure website.</p>
+              </div>
+              <div class="flex gap-3"><span>02</span>
+                <p>Showcases engineering projects.</p>
+              </div>
+              <div class="flex gap-3"><span>03</span>
+                <p>Highlights expertise & services.</p>
+              </div>
+              <div class="flex gap-3"><span>04</span>
+                <p>Modern and professional UI.</p>
+              </div>
+            </div>
+
+            <a href="https://aieconstruction.netlify.app/" target="_blank"
+              class="mt-6 inline-block px-5 py-2 rounded-full text-sm"style="background-color: var(--c-accent); ">View App</a>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </section>
+  <script>
+    function filter(cat) {
 
-  <!-- Projects Grid -->
-  <section class="py-20 px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+      // Reset ALL buttons
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-black', 'text-white');
+        btn.classList.add('bg-gray-200', 'text-gray-700');
+      });
 
-      <!-- 1. Lal Sweets -->
-      <a href="lal-sweets.html" class="card reveal group" data-cat="ecom">
-        <div class="aspect-[4/3] relative overflow-hidden flex items-end p-6"
-          style="background:linear-gradient(135deg,#8B1A1A 0%,#D4380D 40%,#FA8C16 100%)">
-          <div class="absolute inset-0 opacity-20"
-            style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><circle cx=%2230%22 cy=%2230%22 r=%2228%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.5%22/></svg>') repeat">
-          </div>
-          <div class="relative z-10">
-            <div class="text-white/60 text-xs font-semibold tracking-widest uppercase mb-1">E-Commerce</div>
-            <div class="font-display font-800 text-3xl text-white leading-tight">LAL SWEETS</div>
-            <div class="text-white/70 text-sm mt-1">Ecom Website</div>
-          </div>
-          <div
-            class="absolute top-5 right-5 w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-2xl">
-            🍬</div>
-        </div>
-        <div class="p-6" style="background:var(--c-card)">
-          <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Modern sweets store with responsive design for
-            smooth shopping. Traditional Indian sweets meets contemporary digital commerce.</p>
-          <div class="flex items-center justify-between mt-5">
-            <div class="flex gap-2 flex-wrap">
-              <span class="tag" style="background:rgba(250,140,22,.15);color:#D46B08">React</span>
-              <span class="tag" style="background:rgba(250,140,22,.15);color:#D46B08">Shopify</span>
-            </div>
-            <span class="font-display font-700 text-sm" style="color:var(--c-accent)">View →</span>
-          </div>
-        </div>
-      </a>
+      // Activate ONLY clicked button
+      const activeBtn = document.getElementById('f-' + cat);
+      activeBtn.classList.remove('bg-gray-200', 'text-gray-700');
+      activeBtn.classList.add('bg-black', 'text-white');
 
-      <!-- 2. Kirtilals -->
-      <a href="kirtilals.html" class="card reveal group" data-cat="luxury" style="transition-delay:.1s">
-        <div class="aspect-[4/3] relative overflow-hidden flex items-end p-6"
-          style="background:linear-gradient(135deg,#0D0D0D 0%,#1A1008 50%,#3D2B00 100%)">
-          <div class="absolute inset-0"
-            style="background:radial-gradient(ellipse at 70% 30%,rgba(212,175,55,.25) 0%,transparent 60%)"></div>
-          <div class="relative z-10">
-            <div class="text-yellow-400/60 text-xs font-semibold tracking-widest uppercase mb-1">Luxury Jewellery</div>
-            <div class="font-display font-800 text-3xl text-yellow-300 leading-tight">✦ KIRTILALS</div>
-            <div class="text-yellow-400/60 text-sm mt-1">Since 1939</div>
-          </div>
-          <div
-            class="absolute top-5 right-5 w-14 h-14 rounded-full bg-yellow-400/10 border border-yellow-400/30 flex items-center justify-center text-2xl">
-            💎</div>
-        </div>
-        <div class="p-6" style="background:var(--c-card)">
-          <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Premium diamond-jewellery store with elegant
-            UX for luxury buyers. Heritage brand elevated with modern digital presence.</p>
-          <div class="flex items-center justify-between mt-5">
-            <div class="flex gap-2 flex-wrap">
-              <span class="tag" style="background:rgba(212,175,55,.15);color:#A07800">Next.js</span>
-              <span class="tag" style="background:rgba(212,175,55,.15);color:#A07800">Custom CMS</span>
-            </div>
-            <span class="font-display font-700 text-sm" style="color:var(--c-accent)">View →</span>
-          </div>
-        </div>
-      </a>
+      // Filter items
+      document.querySelectorAll('[data-cat]').forEach(el => {
+        el.style.display =
+          (cat === 'all' || el.dataset.cat === cat) ? 'grid' : 'none';
+      });
 
-      <!-- 3. Tradescribe -->
-      <a href="tradescribe.html" class="card reveal group" data-cat="saas" style="transition-delay:.2s">
-        <div class="aspect-[4/3] relative overflow-hidden flex items-end p-6"
-          style="background:linear-gradient(135deg,#0A0F1E 0%,#0D2137 50%,#0A3D62 100%)">
-          <div class="absolute inset-0"
-            style="background:radial-gradient(ellipse at 30% 70%,rgba(0,200,150,.15) 0%,transparent 60%)"></div>
-          <div class="relative z-10">
-            <div class="text-cyan-400/60 text-xs font-semibold tracking-widest uppercase mb-1">Trading Platform</div>
-            <div class="font-display font-800 text-3xl text-white leading-tight">Tradescribe</div>
-            <div class="text-cyan-400/60 text-sm mt-1">AI-backed analytics</div>
-          </div>
-          <div
-            class="absolute top-5 right-5 w-14 h-14 rounded-full bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-2xl">
-            📈</div>
-        </div>
-        <div class="p-6" style="background:var(--c-card)">
-          <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Sleek journaling platform for tracking trades
-            with AI-backed analytics. Built for serious traders who need clarity.</p>
-          <div class="flex items-center justify-between mt-5">
-            <div class="flex gap-2 flex-wrap">
-              <span class="tag" style="background:rgba(0,200,150,.12);color:#007A5E">React</span>
-              <span class="tag" style="background:rgba(0,200,150,.12);color:#007A5E">AI/ML</span>
-            </div>
-            <span class="font-display font-700 text-sm" style="color:var(--c-accent)">View →</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 4. Murzban -->
-      <a href="murzban.html" class="card reveal group" data-cat="luxury" style="transition-delay:.05s">
-        <div class="aspect-[4/3] relative overflow-hidden flex items-end p-6"
-          style="background:linear-gradient(135deg,#0A0A0A 0%,#1C1C1C 100%)">
-          <div class="absolute inset-0"
-            style="background:repeating-linear-gradient(45deg,rgba(255,255,255,.01) 0px,rgba(255,255,255,.01) 1px,transparent 1px,transparent 12px)">
-          </div>
-          <div class="relative z-10">
-            <div class="text-white/40 text-xs font-semibold tracking-widest uppercase mb-1">Fashion</div>
-            <div class="font-display font-800 text-3xl text-white tracking-widest leading-tight">MURZBAN</div>
-            <div class="text-white/40 text-sm mt-1">Clothing Luxury</div>
-          </div>
-          <div
-            class="absolute top-5 right-5 w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-2xl">
-            👔</div>
-        </div>
-        <div class="p-6" style="background:var(--c-card)">
-          <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Modern online store for curated men's &
-            women's designer fashion. Monochrome elegance meets effortless browsing.</p>
-          <div class="flex items-center justify-between mt-5">
-            <div class="flex gap-2 flex-wrap">
-              <span class="tag" style="background:rgba(100,100,100,.15);color:var(--c-muted)">Next.js</span>
-              <span class="tag" style="background:rgba(100,100,100,.15);color:var(--c-muted)">Shopify</span>
-            </div>
-            <span class="font-display font-700 text-sm" style="color:var(--c-accent)">View →</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 5. Greenfeels -->
-      <a href="greenfeels.html" class="card reveal group" data-cat="ecom" style="transition-delay:.15s">
-        <div class="aspect-[4/3] relative overflow-hidden flex items-end p-6"
-          style="background:linear-gradient(135deg,#0D2818 0%,#1B4332 40%,#2D6A4F 100%)">
-          <div class="absolute inset-0 opacity-10"
-            style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><path d=%22M40 10 Q60 40 40 70 Q20 40 40 10%22 fill=%22rgba(255,255,255,0.3)%22/></svg>') repeat">
-          </div>
-          <div class="relative z-10">
-            <div class="text-green-300/60 text-xs font-semibold tracking-widest uppercase mb-1">Sustainable</div>
-            <div class="font-display font-800 text-3xl text-white leading-tight">greenfeels</div>
-            <div class="text-green-300/60 text-sm mt-1">Eco-friendly Ecom</div>
-          </div>
-          <div
-            class="absolute top-5 right-5 w-14 h-14 rounded-full bg-green-400/10 border border-green-400/20 flex items-center justify-center text-2xl">
-            🌿</div>
-        </div>
-        <div class="p-6" style="background:var(--c-card)">
-          <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Curated eco-friendly essentials in a clean
-            responsive design for conscious shoppers who care about the planet.</p>
-          <div class="flex items-center justify-between mt-5">
-            <div class="flex gap-2 flex-wrap">
-              <span class="tag" style="background:rgba(29,125,68,.15);color:#1D7D44">React</span>
-              <span class="tag" style="background:rgba(29,125,68,.15);color:#1D7D44">WooCommerce</span>
-            </div>
-            <span class="font-display font-700 text-sm" style="color:var(--c-accent)">View →</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 6. Momentz -->
-      <a href="momentz.html" class="card reveal group" data-cat="luxury" style="transition-delay:.25s">
-        <div class="aspect-[4/3] relative overflow-hidden flex items-end p-6"
-          style="background:linear-gradient(135deg,#2D0A14 0%,#6B2737 50%,#C9184A 100%)">
-          <div class="absolute inset-0"
-            style="background:radial-gradient(ellipse at 80% 20%,rgba(255,200,150,.1) 0%,transparent 50%)"></div>
-          <div class="relative z-10">
-            <div class="text-rose-300/60 text-xs font-semibold tracking-widest uppercase mb-1">Luxury Gifting</div>
-            <div class="font-display font-800 text-3xl text-white italic leading-tight">Momentz</div>
-            <div class="text-rose-300/60 text-sm mt-1">Home Décor & Gifts</div>
-          </div>
-          <div
-            class="absolute top-5 right-5 w-14 h-14 rounded-full bg-rose-400/10 border border-rose-400/20 flex items-center justify-center text-2xl">
-            🎁</div>
-        </div>
-        <div class="p-6" style="background:var(--c-card)">
-          <p class="text-sm leading-relaxed" style="color:var(--c-muted)">Curated luxury gifts and premium home décor in
-            a sleek online storefront. Where gifting becomes an experience.</p>
-          <div class="flex items-center justify-between mt-5">
-            <div class="flex gap-2 flex-wrap">
-              <span class="tag" style="background:rgba(201,24,74,.12);color:#A0123A">Next.js</span>
-              <span class="tag" style="background:rgba(201,24,74,.12);color:#A0123A">Stripe</span>
-            </div>
-            <span class="font-display font-700 text-sm" style="color:var(--c-accent)">View →</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </section>
+    }
+  </script>
 
   <!-- CTA -->
-  <section class="py-20 px-6 text-center" style="background:var(--c-surface)">
+  <section class="py-20 px-6 text-center">
     <div class="max-w-2xl mx-auto reveal">
       <h2 class="font-display font-800 text-4xl md:text-5xl mb-4" style="color:var(--c-text)">Your Project Next?</h2>
       <p class="mb-8" style="color:var(--c-muted)">Let's build something extraordinary together.</p>
-      <a href="futuredesks.html#contact" class="btn-primary">Start a Project →</a>
+      <a href="../contact-us" class="btn-primary">Start a Project →</a>
     </div>
   </section>
 
-  <script>
-    const html = document.documentElement;
-    const saved = localStorage.getItem('fd-theme') || 'light';
-    html.className = saved;
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      html.className = html.classList.contains('dark') ? 'light' : 'dark';
-      localStorage.setItem('fd-theme', html.className);
-    });
-    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }), { threshold: .1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  <!-- LEFT: Instagram -->
+  <a href="https://instagram.com/airbebin" target="_blank" class="fixed bottom-6 left-6 z-50 
+          w-12 h-12 flex items-center justify-center 
+          rounded-xl shadow-lg 
+          bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 
+          hover:scale-110 transition duration-300 animate-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+      class="w-12 h-12 rounded-xl shadow-lg hover:scale-110 transition" />
+  </a>
 
-    function filter(cat) {
-      document.querySelectorAll('[id^="f-"]').forEach(b => { b.className = 'tag btn-outline' });
-      document.getElementById('f-' + cat).className = 'tag btn-primary';
-      document.querySelectorAll('[data-cat]').forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-      });
-    }
-  </script>
+  <!-- RIGHT: WhatsApp -->
+  <a href="https://wa.me/916205163577" target="_blank" class="fixed bottom-6 right-6 z-50 
+          w-12 h-12 flex items-center justify-center 
+          rounded-full shadow-lg 
+          bg-green-500 hover:bg-green-600 
+          hover:scale-110 transition duration-300 animate-float">
+
+    <!-- Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 3.5A11.9 11.9 0 0012.1 0C5.6 0 .3 5.3.3 
+             11.8c0 2.1.5 4.1 1.5 5.9L0 24l6.5-1.7c1.7.9 
+             3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 
+             11.8-11.8 0-3.1-1.2-6-3.9-8.4zM12.1 
+             21c-1.7 0-3.3-.4-4.8-1.2l-.3-.2-3.9 
+             1 1-3.8-.2-.3c-1-1.5-1.5-3.2-1.5-4.9 
+             0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 
+             6.9 2.9 1.8 1.8 2.9 4.3 2.9 
+             6.9 0 5.4-4.4 9.8-9.8 
+             9.8zm5.4-7.3c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 
+             1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 
+             0-.5.1-.6.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5.1-.2 
+             0-.4 0-.6 0-.1-.7-1.6-1-2.2-.2-.5-.5-.4-.7-.4h-.6c-.2 
+             0-.6.1-.9.4-.3.3-1.2 1.2-1.2 
+             2.8s1.2 3.2 1.4 3.4c.2.3 
+             2.4 3.6 5.9 5 .8.3 1.4.5 
+             1.9.6.8.2 1.6.2 2.2.1.7-.1 
+             1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3z" />
+    </svg>
+  </a>
+
+  <footer class="relative bg-gray-50 px-6 py-16 overflow-hidden">
+
+    <!-- Big Background Text -->
+    <h1 class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] 
+             font-extrabold text-gray-200 opacity-40 pointer-events-none select-none">
+      AIRBEBIN
+    </h1>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+      <!-- Top Section -->
+      <div class="grid md:grid-cols-3 gap-10 items-start mb-12">
+
+        <!-- Left (Contact + Subscribe) -->
+        <div>
+          <p class="text-gray-500 mb-2">Contact us at</p>
+          <a href="mailto:ask.airbebin@gmail.com" target="_blank" class="font-semibold text-gray-800">
+            ask.airbebin@gmail.com
+          </a>
+
+          <!-- Input -->
+          <div class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
+            <input type="email" placeholder="Enter your email address"
+              class="flex-1 px-4 py-2 rounded-full outline-none text-sm" />
+            <button class="bg-black text-white px-6 py-2 rounded-full text-sm">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="md:ml-auto">
+          <p class="text-gray-500 font-medium mb-4">Links</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="../" class="hover:text-black">Home</a></li>
+            <li><a href="/features" class="hover:text-black">Features</a></li>
+            <li><a href="/projects" class="hover:text-black">Projects</a></li>
+            <li><a href="/about-us" class="hover:text-black">About Us</a></li>
+            <li><a href="/contact-us" class="hover:text-black">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <p class="text-gray-500 font-medium mb-4">More Resources</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="/blogs" class="hover:text-black">Blogs</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-black">Terms & Conditions</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-black">Privacy Policy</a></li>
+            <li><a href="refund-policy.html" class="hover:text-black">Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/assets/public/script.js"></script>
 </body>
 
 </html>

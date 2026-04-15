@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="../assets/public/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Airbebin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/public/style.css">
+  <script src="../tailwind.config.js"></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full p-4">
+    <div
+      class="max-w-4xl mx-auto flex items-center justify-between gap-4 py-3 md:py-4 px-6 token-card border token-border rounded-full ">
+
+      <!-- Logo -->
+      <a href="/" class="font-display font-800 text-2xl tracking-tight token-text flex items-center gap-2">
+        <img src="/assets/public/logo.png" alt="" class="w-10 logo-invert">
+        AIRBEBIN
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium token-muted">
+        <a href="/features" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Features</a>
+        <a href="/projects" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Projects</a>
+        <a href="/about-us" class="hover:token-text transition-colors hover:text-[var(--c-text)]">About Us</a>
+        <a href="/contact-us" class="hover:token-text transition-colors text-[var(--c-text)]">Contact Us</a>
+      </div>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="https://wa.me/916205163577" class="hidden md:inline-block btn-primary text-sm">Let's Talk</a>
+
+        <!-- Mobile hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg token-surface border token-border token-text">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <rect y="3" width="20" height="2" rx="1" />
+            <rect y="9" width="20" height="2" rx="1" />
+            <rect y="15" width="20" height="2" rx="1" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu"
+      class="md:hidden overflow-hidden max-h-0 opacity-0 -translate-y-4 transition-all duration-300 ease-in-out">
+
+      <div class="mt-2 flex flex-col gap-4 py-4 token-card border token-border rounded-2xl p-5">
+        <a href="/features" onclick="closeMobile()">Features</a>
+        <a href="/projects" onclick="closeMobile()">Projects</a>
+        <a href="/about-us" onclick="closeMobile()">About Us</a>
+        <a href="/contact-us" onclick="closeMobile()">Contact Us</a>
+        <a href="https://wa.me/916205163577" onclick="closeMobile()" class="btn-primary text-center">Let's Talk</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="grid-bg pt-40 pb-28 md:pt-52 md:pb-32 px-6 text-center relative overflow-hidden">
+    <img src="/assets/images/logos/object_1.png" alt="Object Preview"
+      class="absolute left-6 md:left-20 top-64 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert" />
+
+    <img src="/assets/images/logos/object_2.png" alt="Object Preview"
+      class="absolute right-6 md:right-20 top-60 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert" />
+
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-15"
+      style="background:radial-gradient(circle,#C8F544 0%,transparent 70%)">
+    </div>
+    <div class="max-w-3xl mx-auto relative z-10">
+      <span class="pill reveal">Contact Us</span>
+
+      <h1 class="font-display font-800 text-5xl md:text-7xl mt-4 mb-6 leading-[1.05] reveal"
+        style="color:var(--c-text);transition-delay:.1s">
+        Let’s Start a<br />
+        <span style="color:var(--c-accent)">Conversation</span>
+      </h1>
+
+      <p class="text-lg mb-10 reveal" style="color:var(--c-muted);transition-delay:.2s">
+        Have an idea, project, or just want to say hello? We’d love to hear from you and help bring your vision to life.
+      </p>
+    </div>
+  </section>
+
+  <div class="ticker py-4 overflow-hidden text-sm md:text-2xl font-display font-700 tracking-widest uppercase">
+
+    <div id="marquee-left" class="ticker-inner flex gap-8 md:gap-16 w-max items-center 
+                animate-[marqueeLeft_25s_linear_infinite]">
+      <!-- Logos -->
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+      <span>Develop it from Best</span>
+      <span class="token-accent-text text-[#C8F544]">•</span>
+
+    </div>
+
+  </div>
+
+
+  <section class="pt-24 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+
+      <!-- LEFT CONTENT -->
+      <div class="reveal">
+        <span class="pill">Contact Form</span>
+
+        <h2 class="font-display font-800 text-4xl md:text-5xl mt-4 mb-6 leading-tight" style="color:var(--c-text)">
+          Have a question?<br />
+          Contact us now
+        </h2>
+
+        <p class="text-lg mb-8" style="color:var(--c-muted)">
+          Have questions or need assistance? Our friendly team is ready to provide all the info you need — just get in
+          touch.
+        </p>
+
+        <!-- Address -->
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center token-surface shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 token-text" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M12 21c-4-4.5-7-7.5-7-11a7 7 0 1114 0c0 3.5-3 6.5-7 11z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+          </div>
+          <p class="text-sm token-text">
+            343, Sector 12A, Near Canara Bank<br />
+            Rajendra Space, Awas Vikas Colony, Sikandra, Agra, UP–282007
+          </p>
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center token-surface shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 token-text" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3 7l9 6 9-6M4 19h16a1 1 0 001-1V6a1 1 0 00-1-1H4a1 1 0 00-1 1v12a1 1 0 001 1z" />
+            </svg>
+          </div>
+          <p class="text-sm token-text">partnerships@futuredesks.in</p>
+        </div>
+
+        <!-- Phone -->
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center token-surface shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 token-text" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3 5a2 2 0 012-2h2l2 5-2 2a16 16 0 006 6l2-2 5 2v2a2 2 0 01-2 2h-1C9 21 3 15 3 7V5z" />
+            </svg>
+          </div>
+          <p class="text-sm token-text">
+            +91 8595669310<br />
+            +91 8923612313
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="reveal" style="transition-delay:.2s">
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <input type="text" placeholder="Your Name"
+            class="w-full p-4 rounded-xl token-surface border token-border outline-none" />
+
+          <input type="text" placeholder="Phone Number"
+            class="w-full p-4 rounded-xl token-surface border token-border outline-none" />
+
+          <input type="email" placeholder="Email Address"
+            class="w-full p-4 rounded-xl token-surface border token-border outline-none" />
+
+          <input type="text" placeholder="Subject"
+            class="w-full p-4 rounded-xl token-surface border token-border outline-none" />
+
+          <textarea rows="5" placeholder="Message"
+            class="md:col-span-2 w-full p-4 rounded-xl token-surface border token-border outline-none"></textarea>
+
+          <div class="md:col-span-2 flex justify-end mt-4">
+            <button type="submit"
+              class="px-8 py-4 rounded-xl bg-black text-white font-medium hover:opacity-90 transition">
+              Send Message
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Heading -->
+      <div class="text-center mb-12">
+        <span class="pill reveal">Our Location</span>
+
+        <h2 class="font-display font-800 text-4xl md:text-5xl mt-4 mb-4 reveal"
+          style="color:var(--c-text);transition-delay:.1s">
+          Find Us On The Map
+        </h2>
+
+        <p class="text-lg reveal" style="color:var(--c-muted);transition-delay:.2s">
+          Visit us at our location or reach out anytime — we’re always open to connect.
+        </p>
+      </div>
+
+      <!-- Map -->
+      <div class="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg reveal" style="transition-delay:.3s">
+
+        <iframe src="https://maps.google.com/maps?q=Avas%20Vikas%20Colony%20Agra&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-full border-0">
+        </iframe>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LEFT: Instagram -->
+  <a href="https://instagram.com/airbebin" target="_blank" class="fixed bottom-6 left-6 z-50 
+          w-12 h-12 flex items-center justify-center 
+          rounded-xl shadow-lg 
+          bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 
+          hover:scale-110 transition duration-300 animate-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+      class="w-12 h-12 rounded-xl shadow-lg hover:scale-110 transition" />
+  </a>
+
+  <!-- RIGHT: WhatsApp -->
+  <a href="https://wa.me/916205163577" target="_blank" class="fixed bottom-6 right-6 z-50 
+          w-12 h-12 flex items-center justify-center 
+          rounded-full shadow-lg 
+          bg-green-500 hover:bg-green-600 
+          hover:scale-110 transition duration-300 animate-float">
+
+    <!-- Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 3.5A11.9 11.9 0 0012.1 0C5.6 0 .3 5.3.3 
+             11.8c0 2.1.5 4.1 1.5 5.9L0 24l6.5-1.7c1.7.9 
+             3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 
+             11.8-11.8 0-3.1-1.2-6-3.9-8.4zM12.1 
+             21c-1.7 0-3.3-.4-4.8-1.2l-.3-.2-3.9 
+             1 1-3.8-.2-.3c-1-1.5-1.5-3.2-1.5-4.9 
+             0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 
+             6.9 2.9 1.8 1.8 2.9 4.3 2.9 
+             6.9 0 5.4-4.4 9.8-9.8 
+             9.8zm5.4-7.3c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 
+             1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 
+             0-.5.1-.6.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5.1-.2 
+             0-.4 0-.6 0-.1-.7-1.6-1-2.2-.2-.5-.5-.4-.7-.4h-.6c-.2 
+             0-.6.1-.9.4-.3.3-1.2 1.2-1.2 
+             2.8s1.2 3.2 1.4 3.4c.2.3 
+             2.4 3.6 5.9 5 .8.3 1.4.5 
+             1.9.6.8.2 1.6.2 2.2.1.7-.1 
+             1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3z" />
+    </svg>
+  </a>
+
+  <footer class="relative bg-gray-50 px-6 py-16 overflow-hidden">
+
+    <!-- Big Background Text -->
+    <h1 class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] 
+             font-extrabold text-gray-200 opacity-40 pointer-events-none select-none">
+      AIRBEBIN
+    </h1>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+      <!-- Top Section -->
+      <div class="grid md:grid-cols-3 gap-10 items-start mb-12">
+
+        <!-- Left (Contact + Subscribe) -->
+        <div>
+          <p class="text-gray-500 mb-2">Contact us at</p>
+          <a href="mailto:ask.airbebin@gmail.com" target="_blank" class="font-semibold text-gray-800">
+            ask.airbebin@gmail.com
+          </a>
+
+          <!-- Input -->
+          <div class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
+            <input type="email" placeholder="Enter your email address"
+              class="flex-1 px-4 py-2 rounded-full outline-none text-sm" />
+            <button class="bg-black text-white px-6 py-2 rounded-full text-sm">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="md:ml-auto">
+          <p class="text-gray-500 font-medium mb-4">Links</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="../" class="hover:text-black">Home</a></li>
+            <li><a href="/features" class="hover:text-black">Features</a></li>
+            <li><a href="/projects" class="hover:text-black">Projects</a></li>
+            <li><a href="/about-us" class="hover:text-black">About Us</a></li>
+            <li><a href="/contact-us" class="hover:text-black">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <p class="text-gray-500 font-medium mb-4">More Resources</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="/blogs" class="hover:text-black">Blogs</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-black">Terms & Conditions</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-black">Privacy Policy</a></li>
+            <li><a href="refund-policy.html" class="hover:text-black">Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/assets/public/script.js"></script>
+</body>
+
+</html>
