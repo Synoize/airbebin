@@ -64,3 +64,6 @@ const right = document.getElementById("marquee-right");
 
 left.innerHTML += left.innerHTML;
 right.innerHTML += right.innerHTML;
+
+
+// contact form 

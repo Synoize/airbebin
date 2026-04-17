@@ -574,13 +574,56 @@
           </a>
 
           <!-- Input -->
-          <div class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
-            <input type="email" placeholder="Enter your email address"
+          <form id="subform" class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
+            <input type="email" placeholder="Enter your email address" name="email" required
               class="flex-1 px-4 py-2 rounded-full outline-none text-sm" />
-            <button class="bg-black text-white px-6 py-2 rounded-full text-sm">
+            <button type="submit" id="subsubmit" class="bg-black text-white px-6 py-2 rounded-full text-sm">
               Subscribe
             </button>
-          </div>
+          </form>
+          <script>
+            const subform = document.getElementById("subform");
+            const subsubmit = document.getElementById("subsubmit");
+
+            const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxHNlyZOixwqIjjjnrkIKGK_JT-v6zdPoz2-RqqKfoBatL3fDmaahwpGNl-IxUjvZ0IGw/exec";
+
+            // PASTE YOUR SCRIPT URL
+            const scriptURL = WEB_APP_URL;
+
+            subform.addEventListener("submit", async (e) => {
+              e.preventDefault();
+              subsubmit.innerText = "Subscribing...";
+
+              const formData = new FormData(subform);
+
+              const data = {
+                email: formData.get("email"),
+              };
+
+              try {
+                const res = await fetch(scriptURL, {
+                  method: "POST",
+                  body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+
+                if (result.status === "success") {
+                  subsubmit.innerText = "Subscribed";
+                  subform.reset();
+                } else {
+                  subsubmit.innerText = "Unsubscribed";
+                }
+
+              } catch (err) {
+                subsubmit.innerText = "Unsubscribed";
+              } finally {
+                setTimeout(() => {
+                  subsubmit.innerText = "Subscribe";
+                }, 4000);
+              }
+            });
+          </script>
         </div>
 
         <!-- Links -->
@@ -600,9 +643,9 @@
           <p class="text-gray-500 font-medium mb-4">More Resources</p>
           <ul class="space-y-2 text-sm text-gray-700">
             <li><a href="/blogs" class="hover:text-black">Blogs</a></li>
-            <li><a href="terms-and-conditions.html" class="hover:text-black">Terms & Conditions</a></li>
-            <li><a href="privacy-policy.html" class="hover:text-black">Privacy Policy</a></li>
-            <li><a href="refund-policy.html" class="hover:text-black">Refund Policy</a></li>
+            <li><a href="/terms-and-conditions.html" class="hover:text-black">Terms & Conditions</a></li>
+            <li><a href="/privacy-policy.html" class="hover:text-black">Privacy Policy</a></li>
+            <li><a href="/refund-policy.html" class="hover:text-black">Refund Policy</a></li>
           </ul>
         </div>
 

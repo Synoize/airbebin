@@ -202,32 +202,102 @@
 
       <!-- RIGHT FORM -->
       <div class="reveal" style="transition-delay:.2s">
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form id="form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-          <input type="text" placeholder="Your Name"
+          <input name="name" type="text" placeholder="Your Name" required
             class="w-full p-4 rounded-xl token-surface border token-border outline-none" />
 
-          <input type="text" placeholder="Phone Number"
+          <input name="phone" placeholder="Phone Number" required
             class="w-full p-4 rounded-xl token-surface border token-border outline-none" />
 
-          <input type="email" placeholder="Email Address"
+          <input name="email" type="email" placeholder="Email Address"
             class="w-full p-4 rounded-xl token-surface border token-border outline-none" />
 
-          <input type="text" placeholder="Subject"
-            class="w-full p-4 rounded-xl token-surface border token-border outline-none" />
+          <select name="service" required class="w-full p-4 rounded-xl token-surface border token-border outline-none">
+            <option value="">Select Service</option>
 
-          <textarea rows="5" placeholder="Message"
+            <option value="Custom Development">Custom Development</option>
+            <option value="Prebuilt Products">Prebuilt Products</option>
+            <option value="Paid Advertising">Paid Advertising</option>
+            <option value="Social Media Management">Social Media Management</option>
+            <option value="Business Automation">Business Automation</option>
+            <option value="Design">Design</option>
+
+          </select>
+
+          <textarea name="message" rows="5" placeholder="Message" required
             class="md:col-span-2 w-full p-4 rounded-xl token-surface border token-border outline-none"></textarea>
 
           <div class="md:col-span-2 flex justify-end mt-4">
-            <button type="submit"
+            <button type="submit" id="submit"
               class="px-8 py-4 rounded-xl bg-black text-white font-medium hover:opacity-90 transition">
               Send Message
             </button>
           </div>
 
+          <p id="status" class="absolute bottom-1 px-1 text-sm"></p>
+
         </form>
       </div>
+
+      <script>
+        const form = document.getElementById("form");
+        const submit = document.getElementById("submit");
+        const status = document.getElementById("status");
+
+        const scriptURL1 = "https://script.google.com/macros/s/AKfycbwmYlHZR8RaWkyePuuXtj7m1ZHghc5_UMmcfoVNwlxzlRiE3prvLnwasnQRrRC9YkoTMQ/exec";
+        const scriptURL2 = "";
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          submit.innerText = "Submitting...";
+
+          const formData = new FormData(form);
+
+          const data = {
+            name: formData.get("name"),
+            phone: formData.get("phone"),
+            email: formData.get("email"),
+            service: formData.get("service"),
+            message: formData.get("message")
+          };
+
+          try {
+            // Send to both sheets in parallel
+            const [res1, res2] = await Promise.all([
+              fetch(scriptURL1, {
+                method: "POST",
+                body: JSON.stringify(data),
+              }),
+              fetch(scriptURL2, {
+                method: "POST",
+                body: JSON.stringify(data),
+              })
+            ]);
+
+            const result1 = await res1.json();
+            const result2 = await res2.json();
+
+            if (result1.status === "success" && result2.status === "success") {
+              status.innerText = "Submitted Successfully!";
+              submit.innerText = "Submitted";
+              form.reset();
+            } else {
+              status.innerText = "Saved partially (check backup)";
+              submit.innerText = "Submit Now";
+            }
+
+          } catch (err) {
+            status.innerText = "Error occurred";
+          } finally {
+            setTimeout(() => {
+              status.innerText = "";
+              submit.innerText = "Submit Now";
+            }, 4000);
+          }
+        });
+
+      </script>
 
     </div>
   </section>
@@ -322,13 +392,56 @@
           </a>
 
           <!-- Input -->
-          <div class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
-            <input type="email" placeholder="Enter your email address"
+          <form id="subform" class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
+            <input type="email" placeholder="Enter your email address" name="email" required
               class="flex-1 px-4 py-2 rounded-full outline-none text-sm" />
-            <button class="bg-black text-white px-6 py-2 rounded-full text-sm">
+            <button type="submit" id="subsubmit" class="bg-black text-white px-6 py-2 rounded-full text-sm">
               Subscribe
             </button>
-          </div>
+          </form>
+          <script>
+            const subform = document.getElementById("subform");
+            const subsubmit = document.getElementById("subsubmit");
+
+            const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxHNlyZOixwqIjjjnrkIKGK_JT-v6zdPoz2-RqqKfoBatL3fDmaahwpGNl-IxUjvZ0IGw/exec";
+
+            // PASTE YOUR SCRIPT URL
+            const scriptURL = WEB_APP_URL;
+
+            subform.addEventListener("submit", async (e) => {
+              e.preventDefault();
+              subsubmit.innerText = "Subscribing...";
+
+              const formData = new FormData(subform);
+
+              const data = {
+                email: formData.get("email"),
+              };
+
+              try {
+                const res = await fetch(scriptURL, {
+                  method: "POST",
+                  body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+
+                if (result.status === "success") {
+                  subsubmit.innerText = "Subscribed";
+                  subform.reset();
+                } else {
+                  subsubmit.innerText = "Unsubscribed";
+                }
+
+              } catch (err) {
+                subsubmit.innerText = "Unsubscribed";
+              } finally {
+                setTimeout(() => {
+                  subsubmit.innerText = "Subscribe";
+                }, 4000);
+              }
+            });
+          </script>
         </div>
 
         <!-- Links -->
@@ -348,9 +461,9 @@
           <p class="text-gray-500 font-medium mb-4">More Resources</p>
           <ul class="space-y-2 text-sm text-gray-700">
             <li><a href="/blogs" class="hover:text-black">Blogs</a></li>
-            <li><a href="terms-and-conditions.html" class="hover:text-black">Terms & Conditions</a></li>
-            <li><a href="privacy-policy.html" class="hover:text-black">Privacy Policy</a></li>
-            <li><a href="refund-policy.html" class="hover:text-black">Refund Policy</a></li>
+            <li><a href="/terms-and-conditions.html" class="hover:text-black">Terms & Conditions</a></li>
+            <li><a href="/privacy-policy.html" class="hover:text-black">Privacy Policy</a></li>
+            <li><a href="/refund-policy.html" class="hover:text-black">Refund Policy</a></li>
           </ul>
         </div>
 

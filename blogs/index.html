@@ -3,16 +3,16 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="shortcut icon" href="../../assets/public/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/public/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prebuilt – Airbebin</title>
+  <title>Blogs – Airbebin</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/public/style.css">
-  <script src="../../tailwind.config.js"></script>
+  <link rel="stylesheet" href="../assets/public/style.css">
+  <script src="../tailwind.config.js"></script>
   <script async src="https://www.instagram.com/embed.js"></script>
 </head>
 
@@ -80,17 +80,17 @@
       style="background:radial-gradient(circle,#C8F544 0%,transparent 70%)">
     </div>
     <div class="max-w-3xl mx-auto relative z-10">
-      <span class="pill reveal">Prebuilt SaaS</span>
+      <span class="pill reveal">Blogs</span>
 
       <h1 class="font-display font-800 text-5xl md:text-7xl mt-4 mb-6 leading-[1.05] reveal"
         style="color:var(--c-text);transition-delay:.1s">
-        Launch Faster with<br />
-        <span style="color:var(--c-accent)">Prebuilt SaaS Solutions</span>
+        Insights, Ideas &<br />
+        <span style="color:var(--c-accent)">Latest Trends</span>
       </h1>
 
       <p class="text-lg mb-10 reveal" style="color:var(--c-muted);transition-delay:.2s">
-        Ready-to-use SaaS products designed to help you go live quickly, reduce development time, and scale effortlessly
-        with powerful, customizable solutions.
+        Explore expert insights, industry trends, and practical guides to help you stay ahead in technology, business,
+        and digital growth.
       </p>
     </div>
   </section>
@@ -140,217 +140,208 @@
 
   </div>
 
-  <section class="py-24 px-6 token-surface">
-    <div class="max-w-5xl mx-auto">
+  <!-- Blogs -->
+  <section id="blogs" class="py-24 px-6 token-surface">
+    <div class="max-w-6xl mx-auto">
 
       <!-- Heading -->
-      <div class="text-center mb-20">
-        <span class="pill reveal">Prebuilt SaaS</span>
+      <div class="text-center mb-12">
+        <span class="pill reveal">Blogs</span>
 
-        <h2 class="font-display font-800 text-4xl md:text-5xl mt-4 mb-4 reveal" style="color:var(--c-text)">
-          Check Our SaaS Products
+        <h2 class="font-display font-800 text-4xl md:text-5xl mt-4 mb-4 token-text">
+          Insights, Ideas &<br />
+          <span style="color:var(--c-accent)">Latest Trends</span>
         </h2>
 
-        <p class="text-lg reveal" style="color:var(--c-muted)">
-          Ready-to-launch solutions designed to help you build faster and scale smarter.
+        <p class="text-lg max-w-2xl mx-auto" style="color:var(--c-muted)">
+          Explore expert insights, practical guides, and industry trends to stay ahead in technology and business.
         </p>
       </div>
 
-      <!-- ITEM 1 -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-
-        <!-- Image -->
-        <div class="card p-6 reveal">
-          <img src="/assets/images/features/prebuild/multivendor.png" class="rounded-xl" />
-        </div>
-
-        <!-- Content -->
-        <div class="reveal">
-          <h3 class="text-3xl font-700 mb-4">Multivendor Grocery Solution</h3>
-
-          <ul class="text-sm token-muted space-y-3 mb-6">
-            <li>✔ Complete marketplace with admin, vendor & user panels</li>
-            <li>✔ Real-time order tracking & inventory management</li>
-            <li>✔ Integrated payment & delivery system</li>
-          </ul>
-
-          <a href="#" class="px-5 py-2 rounded-full text-black text-sm" style="background-color: var(--c-accent); ">
-            Check this out
-          </a>
-        </div>
+      <!-- Search -->
+      <div class="max-w-md mx-auto mb-12">
+        <input type="text" id="blogSearch" placeholder="Search blogs..."
+          class="w-full px-5 py-3 rounded-full border token-border outline-none" />
       </div>
 
-      <!-- ITEM 2 (Reverse) -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+      <!-- Blog Grid -->
+      <div id="blogGrid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-        <!-- Content -->
-        <div class="reveal order-2 md:order-1">
-          <h3 class="text-3xl font-700 mb-4">Single Vendor Grocery</h3>
+        <!-- Blog -->
+        <div class="card p-6 blog-item" data-title="How to Build Scalable Web Applications">
 
-          <ul class="text-sm token-muted space-y-3 mb-6">
-            <li>✔ Easy product & inventory management</li>
-            <li>✔ Real-time order processing</li>
-            <li>✔ Clean UI for seamless user experience</li>
-          </ul>
+          <div class="aspect-video rounded-xl overflow-hidden mb-4">
+            <img src="/assets/images/blogs/web.png" class="w-full h-full object-cover">
+          </div>
 
-          <a href="#" class="px-5 py-2 rounded-full text-black text-sm" style="background-color: var(--c-accent); ">
-            Check this out
-          </a>
+          <p class="text-xs token-muted mb-2">Web Development</p>
+          <h3 class="font-semibold text-lg token-text mb-2">
+            How to Build Scalable Web Applications
+          </h3>
+          <p class="text-sm token-muted mb-4">
+            Learn the core principles behind building scalable, high-performance web apps.
+          </p>
+          <a href="#" class="text-sm font-medium token-text">Read More →</a>
         </div>
 
-        <!-- Image -->
-        <div class="card p-6 reveal order-1 md:order-2">
-          <img src="/assets/images/features/prebuild/singlevendor.png" class="rounded-xl" />
+        <!-- Blog -->
+        <div class="card p-6 blog-item" data-title="Google Ads vs Meta Ads Comparison">
+
+          <div class="aspect-video rounded-xl overflow-hidden mb-4">
+            <img src="/assets/images/blogs/ads.png" class="w-full h-full object-cover">
+          </div>
+
+          <p class="text-xs token-muted mb-2">Marketing</p>
+          <h3 class="font-semibold text-lg token-text mb-2">
+            Google Ads vs Meta Ads
+          </h3>
+          <p class="text-sm token-muted mb-4">
+            Compare platforms to find the best ad strategy for your business.
+          </p>
+          <a href="#" class="text-sm font-medium token-text">Read More →</a>
         </div>
+
+        <!-- Blog -->
+        <div class="card p-6 blog-item" data-title="Future of Prebuilt SaaS Products">
+
+          <div class="aspect-video rounded-xl overflow-hidden mb-4">
+            <img src="/assets/images/blogs/saas.png" class="w-full h-full object-cover">
+          </div>
+
+          <p class="text-xs token-muted mb-2">SaaS</p>
+          <h3 class="font-semibold text-lg token-text mb-2">
+            Future of Prebuilt SaaS
+          </h3>
+          <p class="text-sm token-muted mb-4">
+            Discover how SaaS products are changing modern business.
+          </p>
+          <a href="#" class="text-sm font-medium token-text">Read More →</a>
+        </div>
+
+        <!-- Blog -->
+        <div class="card p-6 blog-item" data-title="Business Automation Guide">
+
+          <div class="aspect-video rounded-xl overflow-hidden mb-4">
+            <img src="/assets/images/blogs/automation.png" class="w-full h-full object-cover">
+          </div>
+
+          <p class="text-xs token-muted mb-2">Automation</p>
+          <h3 class="font-semibold text-lg token-text mb-2">
+            Business Automation Guide
+          </h3>
+          <p class="text-sm token-muted mb-4">
+            Reduce manual work and increase productivity with automation.
+          </p>
+          <a href="#" class="text-sm font-medium token-text">Read More →</a>
+        </div>
+
+        <!-- Blog -->
+        <div class="card p-6 blog-item" data-title="UI UX Design Principles for Conversion">
+
+          <div class="aspect-video rounded-xl overflow-hidden mb-4">
+            <img src="/assets/images/blogs/uiux.png" class="w-full h-full object-cover">
+          </div>
+
+          <p class="text-xs token-muted mb-2">Design</p>
+          <h3 class="font-semibold text-lg token-text mb-2">
+            UI/UX Design That Converts
+          </h3>
+          <p class="text-sm token-muted mb-4">
+            Learn design techniques that improve user engagement.
+          </p>
+          <a href="#" class="text-sm font-medium token-text">Read More →</a>
+        </div>
+
+        <!-- Blog -->
+        <div class="card p-6 blog-item" data-title="Startup Product Development Guide">
+
+          <div class="aspect-video rounded-xl overflow-hidden mb-4">
+            <img src="/assets/images/blogs/startup.png" class="w-full h-full object-cover">
+          </div>
+
+          <p class="text-xs token-muted mb-2">Startup</p>
+          <h3 class="font-semibold text-lg token-text mb-2">
+            Startup Product Guide
+          </h3>
+          <p class="text-sm token-muted mb-4">
+            Turn your idea into a successful product step-by-step.
+          </p>
+          <a href="#" class="text-sm font-medium token-text">Read More →</a>
+        </div>
+
       </div>
 
-      <!-- ITEM 3 -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+      <!-- No Results -->
+      <div id="noResults" class="hidden mt-16 text-center">
 
-        <div class="card p-6 reveal">
-          <img src="/assets/images/features/prebuild/fooddelivery.png" class="rounded-xl" />
+        <!-- Icon -->
+        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl token-surface shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 token-muted" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <circle cx="11" cy="11" r="7" stroke-width="1.5" />
+            <path stroke-width="1.5" d="M20 20l-3.5-3.5" />
+          </svg>
         </div>
 
-        <div class="reveal">
-          <h3 class="text-3xl font-700 mb-4">Food Delivery System</h3>
+        <!-- Title -->
+        <h3 class="text-xl font-semibold token-text mb-2">
+          No Blogs Found
+        </h3>
 
-          <ul class="text-sm token-muted space-y-3 mb-6">
-            <li>✔ Multi-role system (Admin, Restaurant, Delivery)</li>
-            <li>✔ Live tracking & order management</li>
-            <li>✔ Secure payments & analytics dashboard</li>
-          </ul>
+        <!-- Description -->
+        <p class="text-sm token-muted max-w-md mx-auto mb-6">
+          We couldn’t find any blogs matching your search. Try using different keywords or explore all articles.
+        </p>
 
-          <a href="#" class="px-5 py-2 rounded-full text-black text-sm" style="background-color: var(--c-accent); ">
-            Check this out
-          </a>
-        </div>
-      </div>
+        <!-- Action Button -->
+        <button onclick="resetSearch()"
+          class="px-6 py-2 rounded-full bg-black text-white text-sm hover:opacity-90 transition">
+          Clear Search
+        </button>
 
-      <!-- ITEM 4 (Reverse) -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-
-        <div class="reveal order-2 md:order-1">
-          <h3 class="text-3xl font-700 mb-4">Restaurant Ordering System</h3>
-
-          <ul class="text-sm token-muted space-y-3 mb-6">
-            <li>✔ QR-based menu & ordering</li>
-            <li>✔ Table management system</li>
-            <li>✔ Real-time analytics & reports</li>
-          </ul>
-
-          <a href="#" class="px-5 py-2 rounded-full text-black text-sm" style="background-color: var(--c-accent); ">
-            Check this out
-          </a>
-        </div>
-
-        <div class="card p-6 reveal order-1 md:order-2">
-          <img src="/assets/images/features/prebuild/restaurant.png" class="rounded-xl" />
-        </div>
-      </div>
-
-      <!-- ITEM 5 -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-
-        <div class="card p-6 reveal">
-          <img src="/assets/images/features/prebuild/ondemand.png" class="rounded-xl" />
-        </div>
-
-        <div class="reveal">
-          <h3 class="text-3xl font-700 mb-4">On-Demand Services System</h3>
-
-          <ul class="text-sm token-muted space-y-3 mb-6">
-            <li>✔ Multi-service booking platform</li>
-            <li>✔ Real-time scheduling & tracking</li>
-            <li>✔ Admin + provider dashboards</li>
-          </ul>
-
-          <a href="#" class="px-5 py-2 rounded-full text-black text-sm" style="background-color: var(--c-accent); ">
-            Check this out
-          </a>
-        </div>
-      </div>
-
-      <!-- ITEM 6 (Reverse) -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-
-        <!-- Content -->
-        <div class="reveal order-2 md:order-1">
-          <h3 class="text-3xl font-700 mb-4">Multi/Single Vendor Ecommerce</h3>
-
-          <ul class="text-sm token-muted space-y-3 mb-6">
-            <li>✔ Multi-vendor marketplace & single store support</li>
-            <li>✔ Inventory, orders & payments management</li>
-            <li>✔ Scalable architecture with modern UI</li>
-          </ul>
-
-          <a href="#" class="px-5 py-2 rounded-full text-black text-sm" style="background-color: var(--c-accent); ">
-            Check this out
-          </a>
-        </div>
-
-        <!-- Image -->
-        <div class="card p-6 reveal order-1 md:order-2">
-          <img src="/assets/images/features/prebuild/ecommerce.png" class="rounded-xl" />
-        </div>
-      </div>
-
-      <!-- ITEM 7 -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-
-        <!-- Image -->
-        <div class="card p-6 reveal">
-          <img src="/assets/images/features/prebuild/rideshare.png" class="rounded-xl h-40 md:w-40 md:h-auto mx-auto" />
-        </div>
-
-        <!-- Content -->
-        <div class="reveal">
-          <h3 class="text-3xl font-700 mb-4">Ride Sharing Complete System</h3>
-
-          <ul class="text-sm token-muted space-y-3 mb-6">
-            <li>✔ Ride booking with live tracking & fare system</li>
-            <li>✔ Driver & user mobile apps</li>
-            <li>✔ Admin dashboard with analytics</li>
-          </ul>
-
-          <a href="#" class="px-5 py-2 rounded-full text-black text-sm" style="background-color: var(--c-accent); ">
-            Check this out
-          </a>
-        </div>
-      </div>
-
-      <!-- ITEM 8 -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-
-        <!-- Content -->
-        <div class="reveal order-2 md:order-1">
-          <h3 class="text-3xl font-700 mb-4">Pharmacy Business Solution</h3>
-
-          <ul class="text-sm token-muted space-y-3 mb-6">
-            <li>✔ Online medicine ordering with prescription upload</li>
-            <li>✔ Inventory & stock management system</li>
-            <li>✔ Delivery tracking & billing system</li>
-          </ul>
-
-          <a href="#" class="px-5 py-2 rounded-full text-black text-sm" style="background-color: var(--c-accent); ">
-            Check this out
-          </a>
-        </div>
-
-        <!-- Image -->
-        <div class="card p-6 reveal order-1 md:order-2">
-          <img src="/assets/images/features/prebuild/pharmacy.png" class="rounded-xl" />
-        </div>
       </div>
 
     </div>
   </section>
+  <script>
+    const searchInput = document.getElementById('blogSearch');
+    const blogs = document.querySelectorAll('.blog-item');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', () => {
+      const value = searchInput.value.toLowerCase();
+      let visible = 0;
+
+      blogs.forEach(blog => {
+        const title = blog.dataset.title.toLowerCase();
+
+        if (title.includes(value)) {
+          blog.style.display = 'block';
+          visible++;
+        } else {
+          blog.style.display = 'none';
+        }
+      });
+
+      if (visible === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    });
+    function resetSearch() {
+      const input = document.getElementById('blogSearch');
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+    }
+  </script>
 
   <!-- CTA -->
   <section class="py-20 px-6 text-center">
     <div class="max-w-2xl mx-auto reveal">
       <h2 class="font-display font-800 text-4xl md:text-5xl mb-4" style="color:var(--c-text)">Your Project Next?</h2>
       <p class="mb-8" style="color:var(--c-muted)">Let's build something extraordinary together.</p>
-      <a href="/contact-us" class="btn-primary">Start a Project →</a>
+      <a href="../features" class="btn-primary">Start a Project →</a>
     </div>
   </section>
 
