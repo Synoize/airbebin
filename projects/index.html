@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <link
       rel="shortcut icon"
-      href="../assets/public/favicon.ico"
+      href="../assets/public/favicon.svg"
       type="image/x-icon"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Work – Airbebin</title>
+    <title>Our Work – ioLayers</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -21,6 +21,21 @@
   </head>
 
   <body>
+    <div
+      id="loader"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
+    >
+      <div
+        class="h-16 w-16 sm:h-24 sm:w-24 animate-spin rounded-full border border-black border-t-white"
+      ></div>
+    </div>
+
+    <script>
+      window.addEventListener("load", () => {
+        document.getElementById("loader").style.display = "none";
+      });
+    </script>
+
     <!-- NAV -->
     <nav class="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full p-4">
       <div
@@ -32,7 +47,7 @@
           class="font-display font-800 text-2xl tracking-tight token-text flex items-center gap-2"
         >
           <img src="/assets/public/logo.png" alt="" class="w-10 logo-invert" />
-          AIRBEBIN
+          IOLAYERS
         </a>
 
         <!-- Desktop links -->
@@ -239,6 +254,301 @@
 
         <!-- PROJECTS -->
         <div id="projects-container" class="space-y-24">
+          <!-- -5 -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="ecom">
+            <div class="bg-white rounded-2xl shadow-sm">
+              <img
+                src="/assets/images/projects/thedaminiedit.png"
+                class="rounded-xl"
+              />
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-700 mb-6">The Damini Edit</h3>
+
+              <div class="space-y-4 text-sm token-muted">
+                <div class="flex gap-3">
+                  <span>01</span>
+                  <p>
+                    Complete multi-vendor marketplace with a seamless shopping
+                    experience.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>02</span>
+                  <p>
+                    Dedicated vendor panel for products, inventory, orders and
+                    sales management.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>03</span>
+                  <p>
+                    Powerful admin and ad manager panels for marketplace and
+                    campaign management.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>04</span>
+                  <p>
+                    Customer-focused application with secure checkout, payments
+                    and order tracking.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://thedaminiedit.com"
+                target="_blank"
+                class="mt-6 inline-block px-5 py-2 rounded-full text-black text-sm"
+                style="background-color: var(--c-accent)"
+                >View App</a
+              >
+            </div>
+          </div>
+
+          <!-- -4 -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="ecom">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-700 mb-6">Bathlux Bathware</h3>
+
+              <div class="space-y-4 text-sm token-muted">
+                <div class="flex gap-3">
+                  <span>01</span>
+                  <p>
+                    Premium bathware and bathroom accessories e-commerce
+                    platform.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>02</span>
+                  <p>
+                    Wide range of soap dishes, dispensers, shelves, taps and
+                    towel accessories.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>03</span>
+                  <p>
+                    Easy product discovery with organized collections and
+                    best-selling products.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>04</span>
+                  <p>
+                    Seamless online shopping with secure checkout and convenient
+                    order services.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://bathluxbathware.com/"
+                target="_blank"
+                class="mt-6 inline-block px-5 py-2 rounded-full text-black text-sm"
+                style="background-color: var(--c-accent)"
+                >View App</a
+              >
+            </div>
+
+            <div class="order-1 md:order-2 bg-white rounded-2xl shadow-sm">
+              <img
+                src="/assets/images/projects/bathluxbathware.png"
+                class="rounded-xl"
+              />
+            </div>
+          </div>
+
+          <!-- -3 -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="ecom">
+            <div class="bg-white rounded-2xl shadow-sm">
+              <img
+                src="/assets/images/projects/watchvilla.png"
+                class="rounded-xl"
+              />
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-700 mb-6">Watch Villa</h3>
+
+              <div class="space-y-4 text-sm token-muted">
+                <div class="flex gap-3">
+                  <span>01</span>
+                  <p>Wide collection of stylish watches for men and women.</p>
+                </div>
+                <div class="flex gap-3">
+                  <span>02</span>
+                  <p>
+                    Quality timepieces at affordable and competitive prices.
+                  </p>
+                </div>
+                <div class="flex gap-3">
+                  <span>03</span>
+                  <p>
+                    Explore automatic, sports, smart and classic watch
+                    collections.
+                  </p>
+                </div>
+                <div class="flex gap-3">
+                  <span>04</span>
+                  <p>Fast customer service with a focus on reliable support.</p>
+                </div>
+              </div>
+              <a
+                href="https://watchvilla.in"
+                target="_blank"
+                class="mt-6 inline-block px-5 py-2 rounded-full text-black text-sm"
+                style="background-color: var(--c-accent)"
+                >View App</a
+              >
+            </div>
+          </div>
+
+          <!-- -2 -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="ecom">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-700 mb-6">Tascons</h3>
+
+              <div class="space-y-4 text-sm token-muted">
+                <div class="flex gap-3">
+                  <span>01</span>
+                  <p>
+                    Online marketplace for JCB spare parts and heavy equipment
+                    products.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>02</span>
+                  <p>
+                    Wide range of filters, grease, lubricants, tyres and machine
+                    components.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>03</span>
+                  <p>
+                    Easy product discovery with organized collections and
+                    best-selling products.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <span>04</span>
+                  <p>
+                    Convenient online shopping experience with secure checkout
+                    and order services.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://tascons.in/"
+                target="_blank"
+                class="mt-6 inline-block px-5 py-2 rounded-full text-black text-sm"
+                style="background-color: var(--c-accent)"
+                >View App</a
+              >
+            </div>
+
+            <div class="order-1 md:order-2 bg-white rounded-2xl shadow-sm">
+              <img
+                src="/assets/images/projects/tascons.png"
+                class="rounded-xl"
+              />
+            </div>
+          </div>
+
+          <!-- -1 -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="ecom">
+            <div class="bg-white rounded-2xl shadow-sm">
+              <img
+                src="/assets/images/projects/theearthence.png"
+                class="rounded-xl"
+              />
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-700 mb-6">The Earthence</h3>
+
+              <div class="space-y-4 text-sm token-muted">
+                <div class="flex gap-3">
+                  <span>01</span>
+                  <p>Premium makhana, spices and dehydrated food products.</p>
+                </div>
+                <div class="flex gap-3">
+                  <span>02</span>
+                  <p>Quality-focused sourcing from certified Indian farms.</p>
+                </div>
+                <div class="flex gap-3">
+                  <span>03</span>
+                  <p>
+                    Modern roasting and dehydration for freshness and quality.
+                  </p>
+                </div>
+                <div class="flex gap-3">
+                  <span>04</span>
+                  <p>
+                    Healthy, authentic and sustainably sourced food products.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://theearthence.com"
+                target="_blank"
+                class="mt-6 inline-block px-5 py-2 rounded-full text-black text-sm"
+                style="background-color: var(--c-accent)"
+                >View App</a
+              >
+            </div>
+          </div>
+
+          <!-- 0 -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-cat="ecom">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-700 mb-6">Viral Watches</h3>
+
+              <div class="space-y-4 text-sm token-muted">
+                <div class="flex gap-3">
+                  <span>01</span>
+                  <p>Premium watches e-commerce platform.</p>
+                </div>
+                <div class="flex gap-3">
+                  <span>02</span>
+                  <p>Seamless product browsing experience.</p>
+                </div>
+                <div class="flex gap-3">
+                  <span>03</span>
+                  <p>Secure checkout and payments.</p>
+                </div>
+                <div class="flex gap-3">
+                  <span>04</span>
+                  <p>Smooth and responsive UI design.</p>
+                </div>
+              </div>
+
+              <a
+                href="https://viralwatches.in"
+                target="_blank"
+                class="mt-6 inline-block px-5 py-2 rounded-full text-black text-sm"
+                style="background-color: var(--c-accent)"
+                >View App</a
+              >
+            </div>
+
+            <div class="order-1 md:order-2 bg-white rounded-2xl shadow-sm">
+              <img
+                src="/assets/images/projects/viralwatches.png"
+                class="rounded-xl"
+              />
+            </div>
+          </div>
+
           <!-- 1 -->
           <div
             class="grid md:grid-cols-2 gap-12 items-center"
@@ -664,7 +974,7 @@
 
     <!-- LEFT: Instagram -->
     <a
-      href="https://instagram.com/airbebin"
+      href="https://instagram.com/iolayerss"
       target="_blank"
       class="fixed bottom-6 left-6 z-50 w-12 h-12 flex items-center justify-center rounded-xl shadow-lg bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:scale-110 transition duration-300 animate-float"
     >
@@ -715,7 +1025,7 @@
       <h1
         class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] font-extrabold text-gray-200 opacity-40 pointer-events-none select-none"
       >
-        AIRBEBIN
+        IOLAYERS
       </h1>
 
       <div class="max-w-7xl mx-auto relative z-10">
@@ -725,11 +1035,11 @@
           <div>
             <p class="text-gray-500 mb-2">Contact us at</p>
             <a
-              href="mailto:ask.airbebin@gmail.com"
+              href="mailto:ask.iolayers@gmail.com"
               target="_blank"
               class="font-semibold text-gray-800"
             >
-              ask.airbebin@gmail.com
+              ask.iolayers@gmail.com
             </a>
 
             <!-- Input -->

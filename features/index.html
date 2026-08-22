@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <link
       rel="shortcut icon"
-      href="../assets/public/favicon.ico"
+      href="../assets/public/favicon.svg"
       type="image/x-icon"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Features – Airbebin</title>
+    <title>Features – ioLayers</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -21,6 +21,21 @@
   </head>
 
   <body>
+    <div
+      id="loader"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
+    >
+      <div
+        class="h-16 w-16 sm:h-24 sm:w-24 animate-spin rounded-full border border-black border-t-white"
+      ></div>
+    </div>
+
+    <script>
+      window.addEventListener("load", () => {
+        document.getElementById("loader").style.display = "none";
+      });
+    </script>
+
     <!-- NAV -->
     <nav class="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full p-4">
       <div
@@ -32,7 +47,7 @@
           class="font-display font-800 text-2xl tracking-tight token-text flex items-center gap-2"
         >
           <img src="/assets/public/logo.png" alt="" class="w-10 logo-invert" />
-          AIRBEBIN
+          IOLAYERS
         </a>
 
         <!-- Desktop links -->
@@ -534,7 +549,7 @@
 
     <!-- LEFT: Instagram -->
     <a
-      href="https://instagram.com/airbebin"
+      href="https://instagram.com/iolayerss"
       target="_blank"
       class="fixed bottom-6 left-6 z-50 w-12 h-12 flex items-center justify-center rounded-xl shadow-lg bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:scale-110 transition duration-300 animate-float"
     >
@@ -585,7 +600,7 @@
       <h1
         class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] font-extrabold text-gray-200 opacity-40 pointer-events-none select-none"
       >
-        AIRBEBIN
+        IOLAYERS
       </h1>
 
       <div class="max-w-7xl mx-auto relative z-10">
@@ -595,11 +610,11 @@
           <div>
             <p class="text-gray-500 mb-2">Contact us at</p>
             <a
-              href="mailto:ask.airbebin@gmail.com"
+              href="mailto:ask.iolayers@gmail.com"
               target="_blank"
               class="font-semibold text-gray-800"
             >
-              ask.airbebin@gmail.com
+              ask.iolayers@gmail.com
             </a>
 
             <!-- Input -->

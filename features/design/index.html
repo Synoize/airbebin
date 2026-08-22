@@ -1,299 +1,402 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/public/favicon.svg"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design – ioLayers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/public/style.css" />
+    <script src="../../tailwind.config.js"></script>
+    <script async src="https://www.instagram.com/embed.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="shortcut icon" href="../../assets/public/favicon.ico" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Design – Airbebin</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/public/style.css">
-  <script src="../../tailwind.config.js"></script>
-  <script async src="https://www.instagram.com/embed.js"></script>
-</head>
-
-<body>
-  <!-- NAV -->
-  <nav class="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full p-4">
+  <body>
     <div
-      class="max-w-4xl mx-auto flex items-center justify-between gap-4 py-3 md:py-4 px-6 token-card border token-border rounded-full ">
+      id="loader"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
+    >
+      <div
+        class="h-16 w-16 sm:h-24 sm:w-24 animate-spin rounded-full border border-black border-t-white"
+      ></div>
+    </div>
 
-      <!-- Logo -->
-      <a href="/" class="font-display font-800 text-2xl tracking-tight token-text flex items-center gap-2">
-        <img src="/assets/public/logo.png" alt="" class="w-10 logo-invert">
-        AIRBEBIN
-      </a>
+    <script>
+      window.addEventListener("load", () => {
+        document.getElementById("loader").style.display = "none";
+      });
+    </script>
 
-      <!-- Desktop links -->
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium token-muted">
-        <a href="/features" class="hover:token-text transition-colors text-[var(--c-text)]">Features</a>
-        <a href="/projects" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Projects</a>
-        <a href="/about-us" class="hover:token-text transition-colors hover:text-[var(--c-text)]">About Us</a>
-        <a href="/contact-us" class="hover:token-text transition-colors hover:text-[var(--c-text)]">Contact Us</a>
+    <!-- NAV -->
+    <nav class="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full p-4">
+      <div
+        class="max-w-4xl mx-auto flex items-center justify-between gap-4 py-3 md:py-4 px-6 token-card border token-border rounded-full"
+      >
+        <!-- Logo -->
+        <a
+          href="/"
+          class="font-display font-800 text-2xl tracking-tight token-text flex items-center gap-2"
+        >
+          <img src="/assets/public/logo.png" alt="" class="w-10 logo-invert" />
+          IOLAYERS
+        </a>
+
+        <!-- Desktop links -->
+        <div
+          class="hidden md:flex items-center gap-8 text-sm font-medium token-muted"
+        >
+          <a
+            href="/features"
+            class="hover:token-text transition-colors text-[var(--c-text)]"
+            >Features</a
+          >
+          <a
+            href="/projects"
+            class="hover:token-text transition-colors hover:text-[var(--c-text)]"
+            >Projects</a
+          >
+          <a
+            href="/about-us"
+            class="hover:token-text transition-colors hover:text-[var(--c-text)]"
+            >About Us</a
+          >
+          <a
+            href="/contact-us"
+            class="hover:token-text transition-colors hover:text-[var(--c-text)]"
+            >Contact Us</a
+          >
+        </div>
+
+        <!-- Right side -->
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle" aria-label="Toggle theme"></button>
+          <a
+            href="https://wa.me/916205163577"
+            class="hidden md:inline-block btn-primary text-sm"
+            >Let's Talk</a
+          >
+
+          <!-- Mobile hamburger -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-lg token-surface border token-border token-text"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <rect y="3" width="20" height="2" rx="1" />
+              <rect y="9" width="20" height="2" rx="1" />
+              <rect y="15" width="20" height="2" rx="1" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <!-- Right side -->
-      <div class="flex items-center gap-4">
-        <button id="theme-toggle" aria-label="Toggle theme"></button>
-        <a href="https://wa.me/916205163577" class="hidden md:inline-block btn-primary text-sm">Let's Talk</a>
-
-        <!-- Mobile hamburger -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg token-surface border token-border token-text">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-            <rect y="3" width="20" height="2" rx="1" />
-            <rect y="9" width="20" height="2" rx="1" />
-            <rect y="15" width="20" height="2" rx="1" />
-          </svg>
-        </button>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden overflow-hidden max-h-0 opacity-0 -translate-y-4 transition-all duration-300 ease-in-out"
+      >
+        <div
+          class="mt-2 flex flex-col gap-4 py-4 token-card border token-border rounded-2xl p-5"
+        >
+          <a href="/features" onclick="closeMobile()">Features</a>
+          <a href="/projects" onclick="closeMobile()">Projects</a>
+          <a href="/about-us" onclick="closeMobile()">About Us</a>
+          <a href="/contact-us" onclick="closeMobile()">Contact Us</a>
+          <a
+            href="https://wa.me/916205163577"
+            onclick="closeMobile()"
+            class="btn-primary text-center"
+            >Let's Talk</a
+          >
+        </div>
       </div>
-    </div>
+    </nav>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu"
-      class="md:hidden overflow-hidden max-h-0 opacity-0 -translate-y-4 transition-all duration-300 ease-in-out">
+    <!-- Hero -->
+    <section
+      class="grid-bg pt-40 pb-28 md:pt-52 md:pb-32 px-6 text-center relative overflow-hidden"
+    >
+      <img
+        src="/assets/images/logos/object_1.png"
+        alt="Object Preview"
+        class="absolute left-6 md:left-20 top-64 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert"
+      />
 
-      <div class="mt-2 flex flex-col gap-4 py-4 token-card border token-border rounded-2xl p-5">
-        <a href="/features" onclick="closeMobile()">Features</a>
-        <a href="/projects" onclick="closeMobile()">Projects</a>
-        <a href="/about-us" onclick="closeMobile()">About Us</a>
-        <a href="/contact-us" onclick="closeMobile()">Contact Us</a>
-        <a href="https://wa.me/916205163577" onclick="closeMobile()" class="btn-primary text-center">Let's Talk</a>
-      </div>
+      <img
+        src="/assets/images/logos/object_2.png"
+        alt="Object Preview"
+        class="absolute right-6 md:right-20 top-60 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert"
+      />
 
-    </div>
-  </nav>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-15"
+        style="background: radial-gradient(circle, #bfffff 0%, transparent 70%)"
+      ></div>
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="pill reveal">UI/UX & Graphics</span>
 
-  <!-- Hero -->
-  <section class="grid-bg pt-40 pb-28 md:pt-52 md:pb-32 px-6 text-center relative overflow-hidden">
-    <img src="/assets/images/logos/object_1.png" alt="Object Preview"
-      class="absolute left-6 md:left-20 top-64 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert" />
+        <h1
+          class="font-display font-800 text-5xl md:text-7xl mt-4 mb-6 leading-[1.05] reveal"
+          style="color: var(--c-text)"
+        >
+          Design That Connects.<br />
+          <span style="color: var(--c-accent)">Experiences That Convert</span>
+        </h1>
 
-    <img src="/assets/images/logos/object_2.png" alt="Object Preview"
-      class="absolute right-6 md:right-20 top-60 z-10 w-16 md:w-60 drop-shadow-2xl animate-float logo-invert" />
-
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-15"
-      style="background:radial-gradient(circle,#C8F544 0%,transparent 70%)">
-    </div>
-    <div class="max-w-3xl mx-auto text-center">
-      <span class="pill reveal">UI/UX & Graphics</span>
-
-      <h1 class="font-display font-800 text-5xl md:text-7xl mt-4 mb-6 leading-[1.05] reveal"
-        style="color:var(--c-text)">
-        Design That Connects.<br />
-        <span style="color:var(--c-accent)">Experiences That Convert</span>
-      </h1>
-
-      <p class="text-lg mb-10 reveal" style="color:var(--c-muted)">
-        Create stunning visuals and user experiences that capture attention, build trust, and drive meaningful
-        engagement across digital platforms.
-      </p>
-    </div>
-  </section>
-
-  <div class="ticker py-4 overflow-hidden text-sm md:text-2xl font-display font-700 tracking-widest uppercase">
-
-    <div id="marquee-left" class="ticker-inner flex gap-8 md:gap-16 w-max items-center 
-                animate-[marqueeLeft_25s_linear_infinite]">
-      <!-- Logos -->
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-      <span>Develop it from Best</span>
-      <span class="token-accent-text text-[#C8F544]">•</span>
-
-    </div>
-
-  </div>
-
-  <section class="py-24 px-6 token-surface">
-    <div class="max-w-5xl mx-auto">
-
-      <!-- Heading -->
-      <div class="text-center mb-16">
-        <span class="pill">UI/UX & Graphics</span>
-        <h2 class="font-display font-800 text-4xl md:text-5xl mt-4 mb-6 token-text">
-          Creative Design That Converts
-        </h2>
-        <p class="text-lg token-muted max-w-2xl mx-auto">
-          Craft stunning user experiences and visuals that elevate your brand and improve usability.
+        <p class="text-lg mb-10 reveal" style="color: var(--c-muted)">
+          Create stunning visuals and user experiences that capture attention,
+          build trust, and drive meaningful engagement across digital platforms.
         </p>
       </div>
+    </section>
 
-      <!-- 1 UI/UX Design -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <div class="card p-6">
-          <img src="/assets/images/features/design/uiux.png" class="rounded-xl">
-        </div>
-        <div>
-          <h3 class="text-3xl font-700 mb-4">UI/UX Design</h3>
-          <p class="text-sm token-muted mb-4">
-            Design intuitive and engaging user experiences focused on usability and conversion.
-          </p>
-          <ul class="text-sm token-muted space-y-2">
-            <li>✔ User-centered design approach</li>
-            <li>✔ Wireframes & prototypes</li>
-            <li>✔ Mobile-first & responsive design</li>
-          </ul>
-        </div>
+    <div
+      class="ticker py-4 overflow-hidden text-sm md:text-2xl font-display font-700 tracking-widest uppercase"
+    >
+      <div
+        id="marquee-left"
+        class="ticker-inner flex gap-8 md:gap-16 w-max items-center animate-[marqueeLeft_25s_linear_infinite]"
+      >
+        <!-- Logos -->
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
+
+        <span>Develop it from Best</span>
+        <span class="token-accent-text text-[#24ffff]">•</span>
       </div>
-
-      <!-- 2 Website & App Design -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <div class="order-2 md:order-1">
-          <h3 class="text-3xl font-700 mb-4">Website & App Design</h3>
-          <p class="text-sm token-muted mb-4">
-            Modern and visually appealing designs tailored for web and mobile platforms.
-          </p>
-          <ul class="text-sm token-muted space-y-2">
-            <li>✔ Landing page & dashboard design</li>
-            <li>✔ App UI systems</li>
-            <li>✔ Conversion-focused layouts</li>
-          </ul>
-        </div>
-        <div class="card p-6 order-1 md:order-2">
-          <img src="/assets/images/features/design/app_design.png" class="rounded-xl w-full">
-        </div>
-      </div>
-
-      <!-- 3 Branding & Visual Identity -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <div class="card p-6">
-          <img src="/assets/images/features/design/branding.png" class="rounded-xl">
-        </div>
-        <div>
-          <h3 class="text-3xl font-700 mb-4">Branding & Visual Identity</h3>
-          <p class="text-sm token-muted mb-4">
-            Build a strong and memorable brand with cohesive design systems.
-          </p>
-          <ul class="text-sm token-muted space-y-2">
-            <li>✔ Logo & brand kit design</li>
-            <li>✔ Typography & color systems</li>
-            <li>✔ Consistent brand guidelines</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 4 Social Media Graphics -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <div class="order-2 md:order-1">
-          <h3 class="text-3xl font-700 mb-4">Social Media Graphics</h3>
-          <p class="text-sm token-muted mb-4">
-            Eye-catching creatives designed to boost engagement and brand visibility.
-          </p>
-          <ul class="text-sm token-muted space-y-2">
-            <li>✔ Post & ad creatives</li>
-            <li>✔ Reels covers & thumbnails</li>
-            <li>✔ Campaign visuals</li>
-          </ul>
-        </div>
-        <div class="card p-6 order-1 md:order-2">
-          <img src="/assets/images/features/design/social_graphics.png" class="rounded-xl">
-        </div>
-      </div>
-
-      <!-- 5 Creative Assets -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <div class="card p-6">
-          <img src="/assets/images/features/design/creative_assets.png" class="rounded-xl">
-        </div>
-        <div>
-          <h3 class="text-3xl font-700 mb-4">Creative Assets</h3>
-          <p class="text-sm token-muted mb-4">
-            High-quality design assets to support marketing, branding, and digital presence.
-          </p>
-          <ul class="text-sm token-muted space-y-2">
-            <li>✔ Banners & ad creatives</li>
-            <li>✔ Presentation & pitch decks</li>
-            <li>✔ Marketing materials</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 6 Design Optimization -->
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1">
-          <h3 class="text-3xl font-700 mb-4">Design Optimization</h3>
-          <p class="text-sm token-muted mb-4">
-            Improve performance and usability with continuous design improvements.
-          </p>
-          <ul class="text-sm token-muted space-y-2">
-            <li>✔ UI audits & improvements</li>
-            <li>✔ A/B testing for design</li>
-            <li>✔ Conversion-focused optimization</li>
-          </ul>
-        </div>
-        <div class="card p-6 order-1 md:order-2">
-          <img src="/assets/images/features/design/design_optimization.png" class="rounded-xl">
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="py-20 px-6 text-center">
-    <div class="max-w-2xl mx-auto reveal">
-      <h2 class="font-display font-800 text-4xl md:text-5xl mb-4" style="color:var(--c-text)">Your Project Next?</h2>
-      <p class="mb-8" style="color:var(--c-muted)">Let's build something extraordinary together.</p>
-      <a href="/contact-us" class="btn-primary">Start a Project →</a>
-    </div>
-  </section>
+    <section class="py-24 px-6 token-surface">
+      <div class="max-w-5xl mx-auto">
+        <!-- Heading -->
+        <div class="text-center mb-16">
+          <span class="pill">UI/UX & Graphics</span>
+          <h2
+            class="font-display font-800 text-4xl md:text-5xl mt-4 mb-6 token-text"
+          >
+            Creative Design That Converts
+          </h2>
+          <p class="text-lg token-muted max-w-2xl mx-auto">
+            Craft stunning user experiences and visuals that elevate your brand
+            and improve usability.
+          </p>
+        </div>
 
-  <!-- LEFT: Instagram -->
-  <a href="https://instagram.com/airbebin" target="_blank" class="fixed bottom-6 left-6 z-50 
-          w-12 h-12 flex items-center justify-center 
-          rounded-xl shadow-lg 
-          bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 
-          hover:scale-110 transition duration-300 animate-float">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-      class="w-12 h-12 rounded-xl shadow-lg hover:scale-110 transition" />
-  </a>
+        <!-- 1 UI/UX Design -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div class="card p-6">
+            <img
+              src="/assets/images/features/design/uiux.png"
+              class="rounded-xl"
+            />
+          </div>
+          <div>
+            <h3 class="text-3xl font-700 mb-4">UI/UX Design</h3>
+            <p class="text-sm token-muted mb-4">
+              Design intuitive and engaging user experiences focused on
+              usability and conversion.
+            </p>
+            <ul class="text-sm token-muted space-y-2">
+              <li>✔ User-centered design approach</li>
+              <li>✔ Wireframes & prototypes</li>
+              <li>✔ Mobile-first & responsive design</li>
+            </ul>
+          </div>
+        </div>
 
-  <!-- RIGHT: WhatsApp -->
-  <a href="https://wa.me/916205163577" target="_blank" class="fixed bottom-6 right-6 z-50 
-          w-12 h-12 flex items-center justify-center 
-          rounded-full shadow-lg 
-          bg-green-500 hover:bg-green-600 
-          hover:scale-110 transition duration-300 animate-float">
+        <!-- 2 Website & App Design -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Website & App Design</h3>
+            <p class="text-sm token-muted mb-4">
+              Modern and visually appealing designs tailored for web and mobile
+              platforms.
+            </p>
+            <ul class="text-sm token-muted space-y-2">
+              <li>✔ Landing page & dashboard design</li>
+              <li>✔ App UI systems</li>
+              <li>✔ Conversion-focused layouts</li>
+            </ul>
+          </div>
+          <div class="card p-6 order-1 md:order-2">
+            <img
+              src="/assets/images/features/design/app_design.png"
+              class="rounded-xl w-full"
+            />
+          </div>
+        </div>
 
-    <!-- Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M20 3.5A11.9 11.9 0 0012.1 0C5.6 0 .3 5.3.3 
+        <!-- 3 Branding & Visual Identity -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div class="card p-6">
+            <img
+              src="/assets/images/features/design/branding.png"
+              class="rounded-xl"
+            />
+          </div>
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Branding & Visual Identity</h3>
+            <p class="text-sm token-muted mb-4">
+              Build a strong and memorable brand with cohesive design systems.
+            </p>
+            <ul class="text-sm token-muted space-y-2">
+              <li>✔ Logo & brand kit design</li>
+              <li>✔ Typography & color systems</li>
+              <li>✔ Consistent brand guidelines</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4 Social Media Graphics -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Social Media Graphics</h3>
+            <p class="text-sm token-muted mb-4">
+              Eye-catching creatives designed to boost engagement and brand
+              visibility.
+            </p>
+            <ul class="text-sm token-muted space-y-2">
+              <li>✔ Post & ad creatives</li>
+              <li>✔ Reels covers & thumbnails</li>
+              <li>✔ Campaign visuals</li>
+            </ul>
+          </div>
+          <div class="card p-6 order-1 md:order-2">
+            <img
+              src="/assets/images/features/design/social_graphics.png"
+              class="rounded-xl"
+            />
+          </div>
+        </div>
+
+        <!-- 5 Creative Assets -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div class="card p-6">
+            <img
+              src="/assets/images/features/design/creative_assets.png"
+              class="rounded-xl"
+            />
+          </div>
+          <div>
+            <h3 class="text-3xl font-700 mb-4">Creative Assets</h3>
+            <p class="text-sm token-muted mb-4">
+              High-quality design assets to support marketing, branding, and
+              digital presence.
+            </p>
+            <ul class="text-sm token-muted space-y-2">
+              <li>✔ Banners & ad creatives</li>
+              <li>✔ Presentation & pitch decks</li>
+              <li>✔ Marketing materials</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 6 Design Optimization -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1">
+            <h3 class="text-3xl font-700 mb-4">Design Optimization</h3>
+            <p class="text-sm token-muted mb-4">
+              Improve performance and usability with continuous design
+              improvements.
+            </p>
+            <ul class="text-sm token-muted space-y-2">
+              <li>✔ UI audits & improvements</li>
+              <li>✔ A/B testing for design</li>
+              <li>✔ Conversion-focused optimization</li>
+            </ul>
+          </div>
+          <div class="card p-6 order-1 md:order-2">
+            <img
+              src="/assets/images/features/design/design_optimization.png"
+              class="rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-6 text-center">
+      <div class="max-w-2xl mx-auto reveal">
+        <h2
+          class="font-display font-800 text-4xl md:text-5xl mb-4"
+          style="color: var(--c-text)"
+        >
+          Your Project Next?
+        </h2>
+        <p class="mb-8" style="color: var(--c-muted)">
+          Let's build something extraordinary together.
+        </p>
+        <a href="/contact-us" class="btn-primary">Start a Project →</a>
+      </div>
+    </section>
+
+    <!-- LEFT: Instagram -->
+    <a
+      href="https://instagram.com/iolayerss"
+      target="_blank"
+      class="fixed bottom-6 left-6 z-50 w-12 h-12 flex items-center justify-center rounded-xl shadow-lg bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:scale-110 transition duration-300 animate-float"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+        class="w-12 h-12 rounded-xl shadow-lg hover:scale-110 transition"
+      />
+    </a>
+
+    <!-- RIGHT: WhatsApp -->
+    <a
+      href="https://wa.me/916205163577"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center rounded-full shadow-lg bg-green-500 hover:bg-green-600 hover:scale-110 transition duration-300 animate-float"
+    >
+      <!-- Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6 text-white"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M20 3.5A11.9 11.9 0 0012.1 0C5.6 0 .3 5.3.3 
              11.8c0 2.1.5 4.1 1.5 5.9L0 24l6.5-1.7c1.7.9 
              3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 
              11.8-11.8 0-3.1-1.2-6-3.9-8.4zM12.1 
@@ -310,112 +413,138 @@
              2.8s1.2 3.2 1.4 3.4c.2.3 
              2.4 3.6 5.9 5 .8.3 1.4.5 
              1.9.6.8.2 1.6.2 2.2.1.7-.1 
-             1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3z" />
-    </svg>
-  </a>
+             1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3z"
+        />
+      </svg>
+    </a>
 
-  <footer class="relative bg-gray-50 px-6 py-16 overflow-hidden">
+    <footer class="relative bg-gray-50 px-6 py-16 overflow-hidden">
+      <!-- Big Background Text -->
+      <h1
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] font-extrabold text-gray-200 opacity-40 pointer-events-none select-none"
+      >
+        IOLAYERS
+      </h1>
 
-    <!-- Big Background Text -->
-    <h1 class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] 
-             font-extrabold text-gray-200 opacity-40 pointer-events-none select-none">
-      AIRBEBIN
-    </h1>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Top Section -->
+        <div class="grid md:grid-cols-3 gap-10 items-start mb-12">
+          <!-- Left (Contact + Subscribe) -->
+          <div>
+            <p class="text-gray-500 mb-2">Contact us at</p>
+            <a
+              href="mailto:ask.iolayers@gmail.com"
+              target="_blank"
+              class="font-semibold text-gray-800"
+            >
+              ask.iolayers@gmail.com
+            </a>
 
-    <div class="max-w-7xl mx-auto relative z-10">
+            <!-- Input -->
+            <form
+              id="subform"
+              class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                name="email"
+                required
+                class="flex-1 px-4 py-2 rounded-full outline-none text-sm"
+              />
+              <button
+                type="submit"
+                id="subsubmit"
+                class="bg-black text-white px-6 py-2 rounded-full text-sm"
+              >
+                Subscribe
+              </button>
+            </form>
+            <script>
+              const subform = document.getElementById("subform");
+              const subsubmit = document.getElementById("subsubmit");
 
-      <!-- Top Section -->
-      <div class="grid md:grid-cols-3 gap-10 items-start mb-12">
+              const WEB_APP_URL =
+                "https://script.google.com/macros/s/AKfycbxHNlyZOixwqIjjjnrkIKGK_JT-v6zdPoz2-RqqKfoBatL3fDmaahwpGNl-IxUjvZ0IGw/exec";
 
-        <!-- Left (Contact + Subscribe) -->
-        <div>
-          <p class="text-gray-500 mb-2">Contact us at</p>
-          <a href="mailto:ask.airbebin@gmail.com" target="_blank" class="font-semibold text-gray-800">
-            ask.airbebin@gmail.com
-          </a>
+              // PASTE YOUR SCRIPT URL
+              const scriptURL = WEB_APP_URL;
 
-          <!-- Input -->
-          <form id="subform" class="flex items-center bg-white rounded-full shadow-md p-1 max-w-md mt-6">
-            <input type="email" placeholder="Enter your email address" name="email" required
-              class="flex-1 px-4 py-2 rounded-full outline-none text-sm" />
-            <button type="submit" id="subsubmit" class="bg-black text-white px-6 py-2 rounded-full text-sm">
-              Subscribe
-            </button>
-          </form>
-          <script>
-            const subform = document.getElementById("subform");
-            const subsubmit = document.getElementById("subsubmit");
+              subform.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                subsubmit.innerText = "Subscribing...";
 
-            const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxHNlyZOixwqIjjjnrkIKGK_JT-v6zdPoz2-RqqKfoBatL3fDmaahwpGNl-IxUjvZ0IGw/exec";
+                const formData = new FormData(subform);
 
-            // PASTE YOUR SCRIPT URL
-            const scriptURL = WEB_APP_URL;
+                const data = {
+                  email: formData.get("email"),
+                };
 
-            subform.addEventListener("submit", async (e) => {
-              e.preventDefault();
-              subsubmit.innerText = "Subscribing...";
+                try {
+                  const res = await fetch(scriptURL, {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                  });
 
-              const formData = new FormData(subform);
+                  const result = await res.json();
 
-              const data = {
-                email: formData.get("email"),
-              };
-
-              try {
-                const res = await fetch(scriptURL, {
-                  method: "POST",
-                  body: JSON.stringify(data)
-                });
-
-                const result = await res.json();
-
-                if (result.status === "success") {
-                  subsubmit.innerText = "Subscribed";
-                  subform.reset();
-                } else {
+                  if (result.status === "success") {
+                    subsubmit.innerText = "Subscribed";
+                    subform.reset();
+                  } else {
+                    subsubmit.innerText = "Unsubscribed";
+                  }
+                } catch (err) {
                   subsubmit.innerText = "Unsubscribed";
+                } finally {
+                  setTimeout(() => {
+                    subsubmit.innerText = "Subscribe";
+                  }, 4000);
                 }
+              });
+            </script>
+          </div>
 
-              } catch (err) {
-                subsubmit.innerText = "Unsubscribed";
-              } finally {
-                setTimeout(() => {
-                  subsubmit.innerText = "Subscribe";
-                }, 4000);
-              }
-            });
-          </script>
+          <!-- Links -->
+          <div class="md:ml-auto">
+            <p class="text-gray-500 font-medium mb-4">Links</p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="../" class="hover:text-black">Home</a></li>
+              <li><a href="/features" class="hover:text-black">Features</a></li>
+              <li><a href="/projects" class="hover:text-black">Projects</a></li>
+              <li><a href="/about-us" class="hover:text-black">About Us</a></li>
+              <li>
+                <a href="/contact-us" class="hover:text-black">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <p class="text-gray-500 font-medium mb-4">More Resources</p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="/blogs" class="hover:text-black">Blogs</a></li>
+              <li>
+                <a href="/terms-and-conditions.html" class="hover:text-black"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="/privacy-policy.html" class="hover:text-black"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="/refund-policy.html" class="hover:text-black"
+                  >Refund Policy</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <!-- Links -->
-        <div class="md:ml-auto">
-          <p class="text-gray-500 font-medium mb-4">Links</p>
-          <ul class="space-y-2 text-sm text-gray-700">
-            <li><a href="../" class="hover:text-black">Home</a></li>
-            <li><a href="/features" class="hover:text-black">Features</a></li>
-            <li><a href="/projects" class="hover:text-black">Projects</a></li>
-            <li><a href="/about-us" class="hover:text-black">About Us</a></li>
-            <li><a href="/contact-us" class="hover:text-black">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <!-- Resources -->
-        <div>
-          <p class="text-gray-500 font-medium mb-4">More Resources</p>
-          <ul class="space-y-2 text-sm text-gray-700">
-            <li><a href="/blogs" class="hover:text-black">Blogs</a></li>
-            <li><a href="/terms-and-conditions.html" class="hover:text-black">Terms & Conditions</a></li>
-            <li><a href="/privacy-policy.html" class="hover:text-black">Privacy Policy</a></li>
-            <li><a href="/refund-policy.html" class="hover:text-black">Refund Policy</a></li>
-          </ul>
-        </div>
-
       </div>
+    </footer>
 
-    </div>
-  </footer>
-
-  <script src="/assets/public/script.js"></script>
-</body>
-
+    <script src="/assets/public/script.js"></script>
+  </body>
 </html>
