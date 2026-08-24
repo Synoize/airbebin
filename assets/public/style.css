@@ -4,7 +4,7 @@
   --c-border: #dce2e2;
   --c-text: #0a0a0a;
   --c-muted: #6b6b6b;
-  --c-accent: #24ffff;
+  --c-accent: #00ffff;
   --c-accent-fg: #0a0a0a;
   --c-card: #ffffff;
   --c-nav: rgba(249, 249, 246, 0.88);
@@ -16,7 +16,7 @@ html.dark {
   --c-border: #2a2a2a;
   --c-text: #ffffff;
   --c-muted: #888888;
-  --c-accent: #24ffff;
+  --c-accent: #00ffff;
   --c-accent-fg: #0a0a0a;
   --c-card: #1a1a1a;
   --c-nav: rgba(10, 10, 10, 0.88);
